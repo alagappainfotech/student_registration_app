@@ -1,0 +1,42 @@
+/* Fix for overlays that might be blocking interactions - use with caution */
+
+/* Only apply to specific overlay classes that are known to cause issues */
+.overlay.blocking,
+.modal-backdrop.show,
+.backdrop.show,
+[class*="overlay-"].blocking {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Ensure interactive elements remain clickable */
+button:not(:disabled),
+[role="button"]:not(:disabled),
+input[type="submit"]:not(:disabled),
+input[type="button"]:not(:disabled),
+a[href] {
+  position: relative;
+  z-index: 10;
+}
+
+/* Debug styles - only enable when needed */
+/*
+.debug-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 0, 0, 0.1);
+  z-index: 9999;
+  pointer-events: none;
+}
+*/
+
+/* Reset any forced visibility/opacity that might interfere */
+body, #root {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}

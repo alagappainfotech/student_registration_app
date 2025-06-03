@@ -1,0 +1,26 @@
+[
+    {
+        "model": "registration.course",
+        "pk": 1,
+        "fields": {
+            "name": "Introduction to Computer Science",
+            "code": "CS101",
+            "description": "Fundamental course in computer science",
+            "credits": 3,
+            "department": "Computer Science",
+            "faculty": 2
+        }
+    },
+    {
+        "model": "registration.course",
+        "pk": 2,
+        "fields": {
+            "name": "Advanced Machine Learning",
+            "code": "CS501",
+            "description": "Advanced course in machine learning techniques",
+            "credits": 4,
+            "department": "Computer Science",
+            "faculty": 2
+        }
+    }
+]

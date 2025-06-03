@@ -1,0 +1,38 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "admin",
+            "email": "admin@university.edu",
+            "password": "pbkdf2_sha256$600000$Qx3zNOJyJqLqGxGxNqJqWO$+Yt0X8Dg1Xt8Ry3qZOZDtYHYqnHqnHqnHqnHqnH=",
+            "is_staff": true,
+            "is_superuser": true,
+            "is_active": true
+        }
+    },
+    {
+        "model": "auth.user", 
+        "pk": 2,
+        "fields": {
+            "username": "faculty1",
+            "email": "faculty1@university.edu",
+            "password": "pbkdf2_sha256$600000$Qx3zNOJyJqLqGxGxNqJqWO$+Yt0X8Dg1Xt8Ry3qZOZDtYHYqnHqnHqnHqnHqnH=",
+            "is_staff": true,
+            "is_superuser": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "username": "student1",
+            "email": "student1@university.edu",
+            "password": "pbkdf2_sha256$600000$Qx3zNOJyJqLqGxGxNqJqWO$+Yt0X8Dg1Xt8Ry3qZOZDtYHYqnHqnHqnHqnHqnH=",
+            "is_staff": false,
+            "is_superuser": false,
+            "is_active": true
+        }
+    }
+]

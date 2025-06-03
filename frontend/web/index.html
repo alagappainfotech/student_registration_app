@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alagappa Academy of Excellence</title>
+    <meta name="description" content="Alagappa Academy of Excellence provides quality education from KG to Grade 12 and competitive exam coaching. Join us for a bright academic future.">
+    <meta name="keywords" content="Alagappa Academy, AAE, school education, competitive exam coaching, KG to 12, CBSE, ICSE, IIT JEE, NEET, coaching center, best school in Chennai">
+    <meta name="author" content="Alagappa Academy of Excellence">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1976d2">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alagappaacademy.edu/">
+    <meta property="og:title" content="Alagappa Academy of Excellence | Best School & Coaching Center">
+    <meta property="og:description" content="Alagappa Academy of Excellence provides quality education from KG to Grade 12 and competitive exam coaching. Join us for a bright academic future.">
+    <meta property="og:image" content="https://alagappaacademy.edu/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://alagappaacademy.edu/">
+    <meta name="twitter:title" content="Alagappa Academy of Excellence | Best School & Coaching Center">
+    <meta name="twitter:description" content="Alagappa Academy of Excellence provides quality education from KG to Grade 12 and competitive exam coaching. Join us for a bright academic future.">
+    <meta name="twitter:image" content="https://alagappaacademy.edu/images/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/aae-logo.png" />
+    <link rel="apple-touch-icon" href="/aae-logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alagappaacademy.edu/" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Your Institution Name",
+      "url": "https://your-institution.com",
+      "logo": "https://your-institution.com/images/logo.png",
+      "sameAs": [
+        "https://facebook.com/yourinstitution",
+        "https://twitter.com/yourinstitution",
+        "https://linkedin.com/company/yourinstitution"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-234-567-8900",
+        "contactType": "customer service",
+        "availableLanguage": ["English"]
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Debug script to check for click event issues
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('Debug script loaded');
+        
+        // Check for click events on the document
+        document.addEventListener('click', (e) => {
+          console.log('Document click event:', {
+            target: e.target,
+            tagName: e.target.tagName,
+            id: e.target.id,
+            classList: Array.from(e.target.classList),
+            isTrusted: e.isTrusted
+          });
+        }, true); // Use capture phase
+        
+        // Check for form submission
+        document.addEventListener('submit', (e) => {
+          console.log('Form submit event:', {
+            target: e.target,
+            isTrusted: e.isTrusted,
+            defaultPrevented: e.defaultPrevented
+          });
+        }, true);
+      });
+    </script>
+  </body>
+</html>

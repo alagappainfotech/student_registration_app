@@ -1,0 +1,35 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "strictFunctionTypes": false,
+    "strictBindCallApply": false,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": false,
+    "alwaysStrict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": false,
+    "target": "es2017"
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
+}

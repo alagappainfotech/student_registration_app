@@ -1,0 +1,24 @@
+[
+    {
+        "model": "registration.organization",
+        "pk": 1,
+        "fields": {
+            "name": "Main University",
+            "description": "Primary educational institution",
+            "is_internal": true,
+            "contact_email": "info@university.edu",
+            "contact_phone": "+1234567890"
+        }
+    },
+    {
+        "model": "registration.organization",
+        "pk": 2,
+        "fields": {
+            "name": "Partner Research Institute",
+            "description": "External research collaboration partner",
+            "is_internal": false,
+            "contact_email": "contact@researchinstitute.org",
+            "contact_phone": "+1987654321"
+        }
+    }
+]

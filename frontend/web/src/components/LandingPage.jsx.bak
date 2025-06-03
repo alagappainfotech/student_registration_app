@@ -1,0 +1,514 @@
+import React, { useState } from 'react';
+import { 
+  Box, 
+  Button, 
+  Container, 
+  Typography, 
+  Grid, 
+  Card, 
+  CardContent,
+  useTheme,
+  useMediaQuery,
+  styled,
+  keyframes,
+  TextField,
+  Divider,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Link,
+  IconButton
+} from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import RegistrationDialog from './RegistrationDialog';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+
+// Keyframes for animations
+const float = keyframes`
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+`;
+
+const pulse = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+`;
+
+// Styled components
+const HeroSection = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  minHeight: '90vh',
+  display: 'flex',
+  alignItems: 'center',
+  background: 'linear-gradient(135deg, #1a237e 0%, #283593 100%)',
+  color: '#fff',
+  overflow: 'hidden',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'url(https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80) center/cover',
+    opacity: 0.3,
+    zIndex: 1,
+  },
+}));
+
+const HeroContent = styled(Container)({
+  position: 'relative',
+  zIndex: 2,
+  textAlign: 'center',
+  padding: '4rem 1rem',
+});
+
+const HeroTitle = styled(Typography)(({ theme }) => ({
+  fontSize: '3.5rem',
+  fontWeight: 800,
+  marginBottom: theme.spacing(2),
+  [theme.breakpoints.down('md')]: {
+    fontSize: '2.5rem',
+  },
+}));
+
+const HeroSubtitle = styled(Typography)(({ theme }) => ({
+  fontSize: '1.25rem',
+  marginBottom: theme.spacing(4),
+  maxWidth: '800px',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+}));
+
+const ButtonGroup = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  gap: '1rem',
+  justifyContent: 'center',
+  marginTop: theme.spacing(4),
+  [theme.breakpoints.down('sm')]: {
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+}));
+
+const FeatureCard = styled(Card)(({ theme }) => ({
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  transition: 'transform 0.3s, box-shadow 0.3s',
+  '&:hover': {
+    transform: 'translateY(-8px)',
+    boxShadow: theme.shadows[8],
+  },
+}));
+
+const FeatureIcon = styled(Box)(({ theme }) => ({
+  fontSize: '3rem',
+  color: theme.palette.primary.main,
+  marginBottom: theme.spacing(2),
+  animation: `${pulse} 4s ease-in-out infinite`,
+}));
+
+// Feature cards data
+const features = [
+  {
+    icon: '🏫',
+    title: 'Streamlined Enrollment',
+    description: 'Our intuitive registration process gets students enrolled in minutes, not hours.'
+  },
+  {
+    icon: '⚡',
+    title: 'Fast-Track Approval',
+    description: 'Experience our industry-leading 24-hour approval process.'
+  },
+  {
+    icon: '🔒',
+    title: 'Bank-Grade Security',
+    description: 'Your information is protected with enterprise-level 256-bit encryption.'
+  },
+  {
+    icon: '🌐',
+    title: '24/7 Access',
+    description: 'Manage your academic profile anytime, anywhere with our responsive platform.'
+  }
+];
+
+const testimonials = [
+  {
+    id: 1,
+    name: 'Dr. Sarah Williams',
+    role: 'Dean of Admissions, State University',
+    quote: 'Since implementing this system, our registration process has become 60% more efficient. The automated workflows have saved our staff hundreds of hours each semester.',
+    rating: 5
+  },
+  {
+    id: 2,
+    name: 'Michael Chen',
+    role: 'Registrar, City College',
+    quote: 'The student portal has reduced our support tickets by 75%. The intuitive interface means fewer questions from students and parents.',
+    rating: 5
+  },
+  {
+    id: 3,
+    name: 'Emily Rodriguez',
+    role: 'Academic Advisor, University of Technology',
+    quote: 'The real-time enrollment tracking has been a game-changer for our advising team. We can now provide better guidance to our students.',
+    rating: 4
+  }
+];
+
+const quickLinks = [
+  { text: 'About Us', href: '/about' },
+  { text: 'Academic Programs', href: '/programs' },
+  { text: 'Admissions', href: '/admissions' },
+  { text: 'Tuition & Fees', href: '/tuition' },
+  { text: 'Financial Aid', href: '/financial-aid' },
+  { text: 'Campus Life', href: '/campus-life' }
+];
+
+const contactInfo = [
+  { icon: <LocationOnIcon />, text: '123 University Ave, College Town, ST 12345' },
+  { icon: <PhoneIcon />, text: '+1 (555) 123-4567' },
+  { icon: <EmailIcon />, text: 'admissions@university.edu' }
+];
+
+const socialLinks = [
+  { icon: <FacebookIcon />, name: 'Facebook', url: '#' },
+  { icon: <TwitterIcon />, name: 'Twitter', url: '#' },
+  { icon: <LinkedInIcon />, name: 'LinkedIn', url: '#' },
+  { icon: <InstagramIcon />, name: 'Instagram', url: '#' }
+];
+
+const LandingPage = () => {
+  const navigate = useNavigate();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const [openRegistration, setOpenRegistration] = useState(false);
+
+  const handleOpenRegistration = () => {
+    setOpenRegistration(true);
+  };
+
+  const handleCloseRegistration = () => {
+    setOpenRegistration(false);
+  };
+
+  const handleRegistrationSuccess = () => {
+    // You can add any success handling here
+    console.log('Registration successful');
+  };
+
+  const handleLogin = () => {
+    navigate('/login');
+  };
+
+  const scrollToFeatures = () => {
+    const featuresSection = document.getElementById('features');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <Box sx={{ overflowX: 'hidden' }}>
+      {/* Hero Section */}
+      <HeroSection>
+        <HeroContent maxWidth="lg">
+          <Typography variant="h1" component="h1" sx={{
+            fontSize: { xs: '2.5rem', sm: '3rem', md: '4rem' },
+            fontWeight: 800,
+            lineHeight: 1.2,
+            mb: 3,
+            background: 'linear-gradient(90deg, #fff 0%, #64b5f6 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}>
+            Welcome to Student Registration
+          </Typography>
+          
+          <HeroSubtitle variant="h5" component="p">
+            Join thousands of students who have already discovered the easiest way to manage their academic journey. 
+            Register now and get instant access to our platform.
+          </HeroSubtitle>
+          
+          <ButtonGroup>
+            <Button 
+              variant="contained" 
+              color="primary" 
+              size="large"
+              onClick={handleOpenRegistration}
+              sx={{
+                px: 6,
+                py: 1.5,
+                fontSize: '1.1rem',
+                fontWeight: 600,
+                borderRadius: '50px',
+                textTransform: 'none',
+                boxShadow: '0 4px 14px rgba(0, 0, 0, 0.2)',
+                '&:hover': {
+                  transform: 'translateY(-2px)',
+                  boxShadow: '0 6px 20px rgba(0, 0, 0, 0.25)',
+                },
+                transition: 'all 0.3s ease',
+              }}
+            >
+              Register Now
+            </Button>
+            <RegistrationDialog 
+              open={openRegistration} 
+              onClose={handleCloseRegistration}
+              onSuccess={handleRegistrationSuccess}
+            />
+          </ButtonGroup>
+        </HeroContent>
+      </HeroSection>
+
+      {/* Features Section */}
+      <Box id="features" sx={{ py: 8, bgcolor: 'background.paper' }}>
+        <Container maxWidth="lg">
+          <Typography 
+            variant="h2" 
+            component="h2" 
+            align="center" 
+            sx={{ 
+              mb: 6,
+              fontWeight: 700,
+              color: 'primary.main'
+            }}
+          >
+            Why Choose Us
+          </Typography>
+          
+          <Grid container spacing={4}>
+            {features.map((feature, index) => (
+              <Grid item xs={12} sm={6} md={3} key={index}>
+                <FeatureCard>
+                  <CardContent sx={{ 
+                    textAlign: 'center',
+                    p: 4,
+                    flexGrow: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                  }}>
+                    <FeatureIcon>{feature.icon}</FeatureIcon>
+                    <Typography variant="h5" component="h3" gutterBottom>
+                      {feature.title}
+                    </Typography>
+                    <Typography variant="body1" color="text.secondary">
+                      {feature.description}
+                    </Typography>
+                  </CardContent>
+                </FeatureCard>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* Testimonials Section */}
+      <Box sx={{ py: 8, bgcolor: 'grey.50' }}>
+        <Container maxWidth="lg">
+          <Typography variant="h2" component="h2" align="center" gutterBottom sx={{ mb: 6, fontWeight: 700, color: 'primary.main' }}>
+            What Our Community Says
+          </Typography>
+          <Grid container spacing={4}>
+            {testimonials.map((testimonial) => (
+              <Grid item xs={12} md={4} key={testimonial.id}>
+                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <CardContent sx={{ flexGrow: 1, p: 4 }}>
+                    <Box sx={{ display: 'flex', mb: 2 }}>
+                      {[...Array(5)].map((_, i) => (
+                        <Box key={i} sx={{ color: i < testimonial.rating ? 'gold' : 'grey.300' }}>★</Box>
+                      ))}
+                    </Box>
+                    <Typography variant="body1" paragraph sx={{ fontStyle: 'italic', mb: 3 }}>
+                      "{testimonial.quote}"
+                    </Typography>
+                    <Box sx={{ mt: 'auto' }}>
+                      <Typography variant="subtitle1" fontWeight="bold">
+                        {testimonial.name}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {testimonial.role}
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* Call to Action Section */}
+      <Box sx={{ py: 8, bgcolor: 'primary.main', color: 'white' }}>
+        <Container maxWidth="md" sx={{ textAlign: 'center' }}>
+          <Typography variant="h3" component="h2" gutterBottom sx={{ fontWeight: 700, mb: 3 }}>
+            Ready to Start Your Journey?
+          </Typography>
+          <Typography variant="h6" component="p" sx={{ mb: 4, opacity: 0.9 }}>
+            Join thousands of successful students who have already taken the first step toward their future.
+          </Typography>
+          <Button 
+            variant="contained" 
+            color="secondary" 
+            size="large"
+            onClick={handleOpenRegistration}
+            sx={{
+              px: 6,
+              py: 1.5,
+              fontSize: '1.1rem',
+              fontWeight: 600,
+              borderRadius: '50px',
+              textTransform: 'none',
+              boxShadow: '0 4px 14px rgba(0, 0, 0, 0.2)',
+              '&:hover': {
+                transform: 'translateY(-2px)',
+                boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
+              },
+              transition: 'all 0.3s ease',
+            }}
+          >
+            Apply Now
+          </Button>
+        </Container>
+      </Box>
+
+      {/* Contact Section */}
+      <Box sx={{ py: 8, bgcolor: 'background.paper' }}>
+        <Container maxWidth="lg">
+          <Grid container spacing={6}>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 700, color: 'primary.main' }}>
+                Contact Us
+              </Typography>
+              <Typography variant="body1" paragraph sx={{ mb: 4 }}>
+                Have questions? Our team is here to help you with any inquiries about admissions, programs, or campus life.
+              </Typography>
+              
+              <List disablePadding>
+                {contactInfo.map((item, index) => (
+                  <ListItem key={index} disableGutters sx={{ mb: 2 }}>
+                    <ListItemIcon sx={{ color: 'primary.main', minWidth: 40 }}>
+                      {item.icon}
+                    </ListItemIcon>
+                    <ListItemText primary={item.text} />
+                  </ListItem>
+                ))}
+              </List>
+              
+              <Box sx={{ mt: 4, display: 'flex', gap: 2 }}>
+                {socialLinks.map((social, index) => (
+                  <IconButton 
+                    key={index} 
+                    component="a" 
+                    href={social.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    sx={{ 
+                      color: 'primary.main', 
+                      border: '1px solid',
+                      borderColor: 'divider',
+                      '&:hover': {
+                        bgcolor: 'primary.main',
+                        color: 'white'
+                      }
+                    }}
+                  >
+                    {social.icon}
+                  </IconButton>
+                ))}
+              </Box>
+            </Grid>
+            
+            <Grid item xs={12} md={6}>
+              <Card elevation={3}>
+                <CardContent sx={{ p: 4 }}>
+                  <Typography variant="h6" component="h3" gutterBottom sx={{ fontWeight: 600 }}>
+                    Send us a Message
+                  </Typography>
+                  <form>
+                    <Grid container spacing={3}>
+                      <Grid item xs={12} sm={6}>
+                        <TextField
+                          fullWidth
+                          label="First Name"
+                          variant="outlined"
+                          margin="normal"
+                          required
+                        />
+                      </Grid>
+                      <Grid item xs={12} sm={6}>
+                        <TextField
+                          fullWidth
+                          label="Last Name"
+                          variant="outlined"
+                          margin="normal"
+                          required
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextField
+                          fullWidth
+                          label="Email"
+                          type="email"
+                          variant="outlined"
+                          margin="normal"
+                          required
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextField
+                          fullWidth
+                          label="Subject"
+                          variant="outlined"
+                          margin="normal"
+                          required
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextField
+                          fullWidth
+                          label="Message"
+                          multiline
+                          rows={4}
+                          variant="outlined"
+                          margin="normal"
+                          required
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Button 
+                          type="submit" 
+                          variant="contained" 
+                          color="primary" 
+                          size="large"
+                          fullWidth
+                        >
+                          Send Message
+                        </Button>
+                      </Grid>
+                    </Grid>
+                  </form>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+    </Box>
+  );
+};
+
+export default LandingPage;

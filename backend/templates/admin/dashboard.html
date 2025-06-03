@@ -1,0 +1,121 @@
+{% extends 'admin/change_list.html' %}
+{% block content %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<div class="dashboard">
+    <h1>System Dashboard</h1>
+    
+    <div class="dashboard-section">
+        <h2>Organization Overview</h2>
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <h3>Total Organizations</h3>
+                <p>{{ total_organizations }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Internal Organizations</h3>
+                <p>{{ internal_organizations }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="dashboard-section">
+        <h2>User Statistics</h2>
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <h3>Total Students</h3>
+                <p>{{ total_students }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Faculty</h3>
+                <p>{{ total_faculty }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="dashboard-section">
+        <h2>Course Insights</h2>
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <h3>Total Courses</h3>
+                <p>{{ total_courses }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Course Fees</h3>
+                <p>${{ total_course_fees|floatformat:2 }}</p>
+            </div>
+        </div>
+        
+        <h3>Enrollments by Course</h3>
+        <table>
+            <tr>
+                <th>Course</th>
+                <th>Enrollments</th>
+            </tr>
+            {% for course in enrollments_by_course %}
+            <tr>
+                <td>{{ course.course__name }}</td>
+                <td>{{ course.count }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+    <div class="dashboard-section">
+        <h2>Grade Distribution</h2>
+        <table>
+            <tr>
+                <th>Grade</th>
+                <th>Count</th>
+            </tr>
+            {% for grade in grade_distribution %}
+            <tr>
+                <td>{{ grade.grade }}</td>
+                <td>{{ grade.count }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<style>
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.dashboard-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dashboard-stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-card {
+    background-color: #e9ecef;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+</style>
+{% endblock %}

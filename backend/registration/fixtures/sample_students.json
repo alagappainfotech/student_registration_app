@@ -1,0 +1,38 @@
+[
+  {
+    "model": "registration.student",
+    "pk": 1,
+    "fields": {
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "phone": "1234567890",
+      "date_of_birth": "2005-04-10",
+      "address": "123 Main St, Springfield",
+      "registration_date": "2025-05-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "registration.student",
+    "pk": 2,
+    "fields": {
+      "name": "Bob Smith",
+      "email": "bob@example.com",
+      "phone": "9876543210",
+      "date_of_birth": "2006-09-23",
+      "address": "456 Elm St, Springfield",
+      "registration_date": "2025-05-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "registration.student",
+    "pk": 3,
+    "fields": {
+      "name": "Carol Lee",
+      "email": "carol@example.com",
+      "phone": "5558881122",
+      "date_of_birth": "2007-12-01",
+      "address": "789 Oak St, Springfield",
+      "registration_date": "2025-05-03T10:00:00Z"
+    }
+  }
+]
