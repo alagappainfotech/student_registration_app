@@ -1,4 +1,4 @@
-#!/Users/acharyathiyagarajan/CascadeProjects/student_registration_app/backend/venv/bin/python3.12
+#!/Users/apple/Projects/student_registration_app/backend/venv/bin/python3.13
 # -*- coding: utf-8 -*-
 import re
 import sys

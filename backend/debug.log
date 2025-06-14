@@ -1,0 +1,897 @@
+INFO 2025-06-14 02:24:58,354 logging_middleware 89579 8409888832 Request: GET /
+INFO 2025-06-14 02:24:58,354 logging_middleware 89579 8409888832 Request: GET /
+DEBUG 2025-06-14 02:25:01,807 urls 89579 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:25:01,807 urls 89579 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:25:01,824 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7060> (Name: login)
+DEBUG 2025-06-14 02:25:01,824 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7060> (Name: login)
+DEBUG 2025-06-14 02:25:01,824 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7240> (Name: logout)
+DEBUG 2025-06-14 02:25:01,824 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7240> (Name: logout)
+DEBUG 2025-06-14 02:25:01,825 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7380> (Name: user-info)
+DEBUG 2025-06-14 02:25:01,825 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7380> (Name: user-info)
+DEBUG 2025-06-14 02:25:01,825 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e74c0> (Name: token_refresh)
+DEBUG 2025-06-14 02:25:01,825 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e74c0> (Name: token_refresh)
+DEBUG 2025-06-14 02:25:01,826 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7740> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:25:01,826 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7740> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:25:01,826 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7880> (Name: student-dashboard)
+DEBUG 2025-06-14 02:25:01,826 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7880> (Name: student-dashboard)
+DEBUG 2025-06-14 02:25:01,826 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e79c0> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:25:01,826 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e79c0> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:25:01,827 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7b00> (Name: registration-request)
+DEBUG 2025-06-14 02:25:01,827 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7b00> (Name: registration-request)
+DEBUG 2025-06-14 02:25:01,827 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7ce0> (Name: registration-request-list)
+DEBUG 2025-06-14 02:25:01,827 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7ce0> (Name: registration-request-list)
+DEBUG 2025-06-14 02:25:01,827 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7ec0> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:25:01,827 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132e7ec0> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:25:01,828 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132dc040> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:25:01,828 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132dc040> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:25:01,828 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132dc180> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:25:01,828 urls 89579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3132dc180> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:25:01,829 urls 89579 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+DEBUG 2025-06-14 02:25:01,829 urls 89579 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+INFO 2025-06-14 02:25:01,865 logging_middleware 89579 8409888832 Response: GET / 200 (3.51s)
+INFO 2025-06-14 02:25:01,865 logging_middleware 89579 8409888832 Response: GET / 200 (3.51s)
+INFO 2025-06-14 02:25:01,884 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:01,884 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:01,886 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:01,886 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:01,887 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:01,887 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:01,895 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.01s)
+INFO 2025-06-14 02:25:01,895 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.01s)
+WARNING 2025-06-14 02:25:01,898 log 89579 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2025-06-14 02:25:01,898 log 89579 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:01,899 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:01,899 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:01,903 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.00s)
+INFO 2025-06-14 02:25:01,903 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.00s)
+WARNING 2025-06-14 02:25:01,904 log 89579 8409888832 Not Found: /static/rest_framework/css/default.css
+WARNING 2025-06-14 02:25:01,904 log 89579 8409888832 Not Found: /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:01,905 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:01,905 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:01,913 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.01s)
+INFO 2025-06-14 02:25:01,913 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.01s)
+WARNING 2025-06-14 02:25:01,914 log 89579 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+WARNING 2025-06-14 02:25:01,914 log 89579 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:01,916 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:01,916 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:01,920 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.00s)
+INFO 2025-06-14 02:25:01,920 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.00s)
+WARNING 2025-06-14 02:25:01,922 log 89579 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2025-06-14 02:25:01,922 log 89579 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:01,923 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:01,923 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:01,931 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.01s)
+INFO 2025-06-14 02:25:01,931 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.01s)
+WARNING 2025-06-14 02:25:01,932 log 89579 8409888832 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:01,932 log 89579 8409888832 Not Found: /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:01,933 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:01,933 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:01,936 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+INFO 2025-06-14 02:25:01,936 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:01,937 log 89579 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2025-06-14 02:25:01,937 log 89579 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:01,938 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:01,938 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:01,950 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.01s)
+INFO 2025-06-14 02:25:01,950 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.01s)
+WARNING 2025-06-14 02:25:01,952 log 89579 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2025-06-14 02:25:01,952 log 89579 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:01,953 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:01,953 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:01,957 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.00s)
+INFO 2025-06-14 02:25:01,957 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.00s)
+WARNING 2025-06-14 02:25:01,957 log 89579 8409888832 Not Found: /static/rest_framework/js/default.js
+WARNING 2025-06-14 02:25:01,957 log 89579 8409888832 Not Found: /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:01,958 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:01,958 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:01,962 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+INFO 2025-06-14 02:25:01,962 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+WARNING 2025-06-14 02:25:01,962 log 89579 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+WARNING 2025-06-14 02:25:01,962 log 89579 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+DEBUG 2025-06-14 02:25:03,312 urls 89578 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:25:03,312 urls 89577 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:25:03,312 urls 89578 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:25:03,312 urls 89577 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:25:03,318 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8ae80> (Name: login)
+DEBUG 2025-06-14 02:25:03,318 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8ae80> (Name: login)
+DEBUG 2025-06-14 02:25:03,318 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08ade0> (Name: login)
+DEBUG 2025-06-14 02:25:03,318 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b060> (Name: logout)
+DEBUG 2025-06-14 02:25:03,318 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08ade0> (Name: login)
+DEBUG 2025-06-14 02:25:03,318 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b060> (Name: logout)
+DEBUG 2025-06-14 02:25:03,319 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08afc0> (Name: logout)
+DEBUG 2025-06-14 02:25:03,319 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b1a0> (Name: user-info)
+DEBUG 2025-06-14 02:25:03,319 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08afc0> (Name: logout)
+DEBUG 2025-06-14 02:25:03,319 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b1a0> (Name: user-info)
+DEBUG 2025-06-14 02:25:03,319 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08b100> (Name: user-info)
+DEBUG 2025-06-14 02:25:03,320 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b2e0> (Name: token_refresh)
+DEBUG 2025-06-14 02:25:03,319 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08b100> (Name: user-info)
+DEBUG 2025-06-14 02:25:03,320 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b2e0> (Name: token_refresh)
+DEBUG 2025-06-14 02:25:03,320 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08b240> (Name: token_refresh)
+DEBUG 2025-06-14 02:25:03,320 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b560> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:25:03,320 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08b240> (Name: token_refresh)
+DEBUG 2025-06-14 02:25:03,321 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08b4c0> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:25:03,320 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b560> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:25:03,321 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08b4c0> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:25:03,321 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b6a0> (Name: student-dashboard)
+DEBUG 2025-06-14 02:25:03,321 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08b600> (Name: student-dashboard)
+DEBUG 2025-06-14 02:25:03,321 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b6a0> (Name: student-dashboard)
+DEBUG 2025-06-14 02:25:03,321 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08b600> (Name: student-dashboard)
+DEBUG 2025-06-14 02:25:03,321 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b7e0> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:25:03,322 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08b740> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:25:03,321 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b7e0> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:25:03,322 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08b740> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:25:03,322 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b920> (Name: registration-request)
+DEBUG 2025-06-14 02:25:03,322 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08b880> (Name: registration-request)
+DEBUG 2025-06-14 02:25:03,322 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8b920> (Name: registration-request)
+DEBUG 2025-06-14 02:25:03,322 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08b880> (Name: registration-request)
+DEBUG 2025-06-14 02:25:03,322 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8bb00> (Name: registration-request-list)
+DEBUG 2025-06-14 02:25:03,322 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08ba60> (Name: registration-request-list)
+DEBUG 2025-06-14 02:25:03,322 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8bb00> (Name: registration-request-list)
+DEBUG 2025-06-14 02:25:03,322 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08ba60> (Name: registration-request-list)
+DEBUG 2025-06-14 02:25:03,323 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8bce0> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:25:03,323 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08bc40> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:25:03,323 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8bce0> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:25:03,323 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08bc40> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:25:03,323 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8be20> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:25:03,323 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08bd80> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:25:03,323 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8be20> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:25:03,323 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08bd80> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:25:03,323 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8bf60> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:25:03,324 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08bec0> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:25:03,323 urls 89578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x312b8bf60> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:25:03,324 urls 89577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x31b08bec0> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:25:03,324 urls 89578 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+DEBUG 2025-06-14 02:25:03,324 urls 89577 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+DEBUG 2025-06-14 02:25:03,324 urls 89578 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+DEBUG 2025-06-14 02:25:03,324 urls 89577 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+INFO 2025-06-14 02:25:03,329 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (1.44s)
+INFO 2025-06-14 02:25:03,329 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (1.44s)
+INFO 2025-06-14 02:25:03,329 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (1.44s)
+INFO 2025-06-14 02:25:03,329 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (1.44s)
+WARNING 2025-06-14 02:25:03,330 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2025-06-14 02:25:03,330 log 89577 8409888832 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2025-06-14 02:25:03,330 log 89577 8409888832 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2025-06-14 02:25:03,330 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:03,349 logging_middleware 89577 8409888832 Request: GET /favicon.ico
+INFO 2025-06-14 02:25:03,349 logging_middleware 89577 8409888832 Request: GET /favicon.ico
+INFO 2025-06-14 02:25:03,352 logging_middleware 89577 8409888832 Response: GET /favicon.ico 404 (0.00s)
+INFO 2025-06-14 02:25:03,352 logging_middleware 89577 8409888832 Response: GET /favicon.ico 404 (0.00s)
+WARNING 2025-06-14 02:25:03,353 log 89577 8409888832 Not Found: /favicon.ico
+WARNING 2025-06-14 02:25:03,353 log 89577 8409888832 Not Found: /favicon.ico
+INFO 2025-06-14 02:25:05,076 logging_middleware 89577 8409888832 Request: GET /
+INFO 2025-06-14 02:25:05,076 logging_middleware 89577 8409888832 Request: GET /
+INFO 2025-06-14 02:25:05,128 logging_middleware 89577 8409888832 Response: GET / 200 (0.05s)
+INFO 2025-06-14 02:25:05,128 logging_middleware 89577 8409888832 Response: GET / 200 (0.05s)
+INFO 2025-06-14 02:25:05,139 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:05,139 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:05,139 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:05,139 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:05,140 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:05,140 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:05,144 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.00s)
+INFO 2025-06-14 02:25:05,144 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.00s)
+WARNING 2025-06-14 02:25:05,144 log 89579 8409888832 Not Found: /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:05,144 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.00s)
+WARNING 2025-06-14 02:25:05,144 log 89579 8409888832 Not Found: /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:05,144 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.00s)
+INFO 2025-06-14 02:25:05,144 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.00s)
+INFO 2025-06-14 02:25:05,144 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.00s)
+WARNING 2025-06-14 02:25:05,145 log 89577 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:05,146 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/default.css
+WARNING 2025-06-14 02:25:05,146 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2025-06-14 02:25:05,145 log 89577 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2025-06-14 02:25:05,146 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:05,146 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:05,147 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:05,147 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:05,149 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:05,149 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:05,152 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.01s)
+INFO 2025-06-14 02:25:05,152 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.01s)
+WARNING 2025-06-14 02:25:05,152 log 89579 8409888832 Not Found: /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:05,153 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.01s)
+WARNING 2025-06-14 02:25:05,152 log 89579 8409888832 Not Found: /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:05,153 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.01s)
+WARNING 2025-06-14 02:25:05,153 log 89577 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:05,153 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.00s)
+WARNING 2025-06-14 02:25:05,153 log 89577 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:05,153 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.00s)
+INFO 2025-06-14 02:25:05,154 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:05,154 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:05,154 log 89578 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:05,155 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+WARNING 2025-06-14 02:25:05,154 log 89578 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:05,155 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:05,157 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:05,157 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:05,159 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.00s)
+INFO 2025-06-14 02:25:05,159 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.00s)
+INFO 2025-06-14 02:25:05,159 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+INFO 2025-06-14 02:25:05,159 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:05,159 log 89579 8409888832 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:05,159 log 89579 8409888832 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:05,160 log 89577 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2025-06-14 02:25:05,160 log 89577 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:05,160 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+INFO 2025-06-14 02:25:05,160 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+INFO 2025-06-14 02:25:05,160 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:05,161 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:05,160 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:05,161 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+WARNING 2025-06-14 02:25:05,161 log 89578 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2025-06-14 02:25:05,161 log 89578 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:05,164 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.00s)
+INFO 2025-06-14 02:25:05,164 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+INFO 2025-06-14 02:25:05,164 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.00s)
+INFO 2025-06-14 02:25:05,164 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+WARNING 2025-06-14 02:25:05,165 log 89579 8409888832 Not Found: /static/rest_framework/js/default.js
+WARNING 2025-06-14 02:25:05,165 log 89577 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+WARNING 2025-06-14 02:25:05,165 log 89579 8409888832 Not Found: /static/rest_framework/js/default.js
+WARNING 2025-06-14 02:25:05,165 log 89577 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:12,962 logging_middleware 89579 8409888832 Request: GET /?id=4229d042-9621-430a-9b90-7398575d7d13&vscodeBrowserReqId=1749867912958
+INFO 2025-06-14 02:25:12,962 logging_middleware 89579 8409888832 Request: GET /?id=4229d042-9621-430a-9b90-7398575d7d13&vscodeBrowserReqId=1749867912958
+INFO 2025-06-14 02:25:12,965 logging_middleware 89579 8409888832 Response: GET /?id=4229d042-9621-430a-9b90-7398575d7d13&vscodeBrowserReqId=1749867912958 200 (0.00s)
+INFO 2025-06-14 02:25:12,965 logging_middleware 89579 8409888832 Response: GET /?id=4229d042-9621-430a-9b90-7398575d7d13&vscodeBrowserReqId=1749867912958 200 (0.00s)
+INFO 2025-06-14 02:25:21,132 logging_middleware 89578 8409888832 Request: GET /
+INFO 2025-06-14 02:25:21,132 logging_middleware 89578 8409888832 Request: GET /
+INFO 2025-06-14 02:25:21,182 logging_middleware 89578 8409888832 Response: GET / 200 (0.05s)
+INFO 2025-06-14 02:25:21,182 logging_middleware 89578 8409888832 Response: GET / 200 (0.05s)
+INFO 2025-06-14 02:25:21,195 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:21,196 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:21,197 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:21,196 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:21,195 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:21,197 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:21,201 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.00s)
+INFO 2025-06-14 02:25:21,201 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.00s)
+INFO 2025-06-14 02:25:21,202 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.01s)
+INFO 2025-06-14 02:25:21,202 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.01s)
+INFO 2025-06-14 02:25:21,202 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.01s)
+WARNING 2025-06-14 02:25:21,203 log 89577 8409888832 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2025-06-14 02:25:21,203 log 89577 8409888832 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2025-06-14 02:25:21,202 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:21,204 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:21,204 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:21,202 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.01s)
+WARNING 2025-06-14 02:25:21,202 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2025-06-14 02:25:21,206 log 89579 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2025-06-14 02:25:21,206 log 89579 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:21,207 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:21,207 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:21,208 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:21,208 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:21,209 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.01s)
+INFO 2025-06-14 02:25:21,209 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.01s)
+WARNING 2025-06-14 02:25:21,210 log 89577 8409888832 Not Found: /static/rest_framework/css/default.css
+WARNING 2025-06-14 02:25:21,210 log 89577 8409888832 Not Found: /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:21,211 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.00s)
+INFO 2025-06-14 02:25:21,211 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.00s)
+INFO 2025-06-14 02:25:21,211 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:21,211 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:21,211 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.00s)
+WARNING 2025-06-14 02:25:21,211 log 89578 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:21,211 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.00s)
+WARNING 2025-06-14 02:25:21,211 log 89578 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+WARNING 2025-06-14 02:25:21,212 log 89579 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2025-06-14 02:25:21,212 log 89579 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:21,213 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:21,213 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:21,214 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:21,214 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:21,215 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.00s)
+INFO 2025-06-14 02:25:21,215 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.00s)
+WARNING 2025-06-14 02:25:21,216 log 89577 8409888832 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:21,216 log 89577 8409888832 Not Found: /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:21,217 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+INFO 2025-06-14 02:25:21,217 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:21,218 log 89578 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2025-06-14 02:25:21,218 log 89578 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:21,218 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+INFO 2025-06-14 02:25:21,218 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+INFO 2025-06-14 02:25:21,218 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:21,218 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/default.js
+WARNING 2025-06-14 02:25:21,219 log 89579 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:21,219 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+WARNING 2025-06-14 02:25:21,219 log 89579 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:21,219 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:21,223 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+INFO 2025-06-14 02:25:21,223 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+WARNING 2025-06-14 02:25:21,224 log 89578 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+WARNING 2025-06-14 02:25:21,224 log 89578 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:21,226 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.01s)
+INFO 2025-06-14 02:25:21,226 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.01s)
+WARNING 2025-06-14 02:25:21,227 log 89577 8409888832 Not Found: /static/rest_framework/js/default.js
+WARNING 2025-06-14 02:25:21,227 log 89577 8409888832 Not Found: /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:22,170 logging_middleware 89579 8409888832 Request: GET /
+INFO 2025-06-14 02:25:22,170 logging_middleware 89579 8409888832 Request: GET /
+INFO 2025-06-14 02:25:22,174 logging_middleware 89579 8409888832 Response: GET / 200 (0.00s)
+INFO 2025-06-14 02:25:22,174 logging_middleware 89579 8409888832 Response: GET / 200 (0.00s)
+INFO 2025-06-14 02:25:22,189 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:22,189 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:22,189 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:22,189 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:22,189 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:22,189 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:22,194 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.00s)
+INFO 2025-06-14 02:25:22,194 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.00s)
+INFO 2025-06-14 02:25:22,194 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.00s)
+INFO 2025-06-14 02:25:22,194 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.00s)
+INFO 2025-06-14 02:25:22,194 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.01s)
+WARNING 2025-06-14 02:25:22,195 log 89577 8409888832 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2025-06-14 02:25:22,196 log 89579 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:22,194 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.01s)
+WARNING 2025-06-14 02:25:22,195 log 89577 8409888832 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2025-06-14 02:25:22,196 log 89579 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2025-06-14 02:25:22,198 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2025-06-14 02:25:22,198 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:22,199 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:22,199 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:22,200 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:22,200 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:22,201 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:22,201 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:22,204 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.01s)
+INFO 2025-06-14 02:25:22,204 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.01s)
+INFO 2025-06-14 02:25:22,204 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.01s)
+INFO 2025-06-14 02:25:22,204 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.01s)
+WARNING 2025-06-14 02:25:22,205 log 89579 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+WARNING 2025-06-14 02:25:22,205 log 89579 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:22,206 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.00s)
+INFO 2025-06-14 02:25:22,206 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.00s)
+WARNING 2025-06-14 02:25:22,205 log 89577 8409888832 Not Found: /static/rest_framework/css/default.css
+WARNING 2025-06-14 02:25:22,205 log 89577 8409888832 Not Found: /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:22,208 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:22,208 log 89578 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:22,208 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:22,208 log 89578 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:22,209 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:22,209 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:22,209 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:22,209 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:22,211 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.00s)
+INFO 2025-06-14 02:25:22,211 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.00s)
+WARNING 2025-06-14 02:25:22,212 log 89579 8409888832 Not Found: /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:22,212 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+INFO 2025-06-14 02:25:22,212 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:22,212 log 89579 8409888832 Not Found: /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:22,212 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+INFO 2025-06-14 02:25:22,212 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:22,213 log 89578 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2025-06-14 02:25:22,213 log 89578 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2025-06-14 02:25:22,214 log 89577 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2025-06-14 02:25:22,214 log 89577 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:22,231 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:22,231 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:22,231 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:22,231 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:22,234 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.00s)
+INFO 2025-06-14 02:25:22,235 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+INFO 2025-06-14 02:25:22,234 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.00s)
+INFO 2025-06-14 02:25:22,235 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+WARNING 2025-06-14 02:25:22,235 log 89577 8409888832 Not Found: /static/rest_framework/js/default.js
+WARNING 2025-06-14 02:25:22,235 log 89578 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+WARNING 2025-06-14 02:25:22,235 log 89577 8409888832 Not Found: /static/rest_framework/js/default.js
+WARNING 2025-06-14 02:25:22,235 log 89578 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:22,508 logging_middleware 89578 8409888832 Request: GET /
+INFO 2025-06-14 02:25:22,508 logging_middleware 89578 8409888832 Request: GET /
+INFO 2025-06-14 02:25:22,512 logging_middleware 89578 8409888832 Response: GET / 200 (0.00s)
+INFO 2025-06-14 02:25:22,512 logging_middleware 89578 8409888832 Response: GET / 200 (0.00s)
+INFO 2025-06-14 02:25:22,525 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:22,525 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:22,527 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:22,527 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:22,536 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:22,539 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.01s)
+INFO 2025-06-14 02:25:22,536 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:22,539 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.01s)
+WARNING 2025-06-14 02:25:22,545 log 89577 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:22,547 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.02s)
+INFO 2025-06-14 02:25:22,548 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.01s)
+INFO 2025-06-14 02:25:22,547 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.02s)
+INFO 2025-06-14 02:25:22,548 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.01s)
+WARNING 2025-06-14 02:25:22,545 log 89577 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2025-06-14 02:25:22,560 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2025-06-14 02:25:22,560 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2025-06-14 02:25:22,568 log 89579 8409888832 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2025-06-14 02:25:22,568 log 89579 8409888832 Not Found: /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:22,576 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:22,586 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:22,576 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:22,586 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:22,602 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:22,604 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.02s)
+INFO 2025-06-14 02:25:22,604 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.03s)
+INFO 2025-06-14 02:25:22,602 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:22,604 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.03s)
+INFO 2025-06-14 02:25:22,604 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.02s)
+WARNING 2025-06-14 02:25:22,620 log 89577 8409888832 Not Found: /static/rest_framework/css/default.css
+WARNING 2025-06-14 02:25:22,620 log 89578 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:22,622 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.02s)
+WARNING 2025-06-14 02:25:22,620 log 89578 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+WARNING 2025-06-14 02:25:22,620 log 89577 8409888832 Not Found: /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:22,622 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.02s)
+WARNING 2025-06-14 02:25:22,634 log 89579 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:22,635 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:22,634 log 89579 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:22,635 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:22,640 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:22,640 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:22,641 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:22,641 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:22,643 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.01s)
+INFO 2025-06-14 02:25:22,643 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.01s)
+INFO 2025-06-14 02:25:22,644 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+INFO 2025-06-14 02:25:22,644 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:22,644 log 89577 8409888832 Not Found: /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:22,644 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+INFO 2025-06-14 02:25:22,644 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:22,644 log 89577 8409888832 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:22,645 log 89578 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2025-06-14 02:25:22,645 log 89579 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2025-06-14 02:25:22,645 log 89579 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2025-06-14 02:25:22,645 log 89578 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:22,646 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:22,646 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:22,646 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:22,646 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:22,650 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.00s)
+INFO 2025-06-14 02:25:22,650 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+INFO 2025-06-14 02:25:22,650 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.00s)
+INFO 2025-06-14 02:25:22,650 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+WARNING 2025-06-14 02:25:22,651 log 89577 8409888832 Not Found: /static/rest_framework/js/default.js
+WARNING 2025-06-14 02:25:22,651 log 89579 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+WARNING 2025-06-14 02:25:22,651 log 89577 8409888832 Not Found: /static/rest_framework/js/default.js
+WARNING 2025-06-14 02:25:22,651 log 89579 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:27,100 logging_middleware 89577 8409888832 Request: GET /
+INFO 2025-06-14 02:25:27,100 logging_middleware 89577 8409888832 Request: GET /
+INFO 2025-06-14 02:25:27,108 logging_middleware 89577 8409888832 Response: GET / 200 (0.01s)
+INFO 2025-06-14 02:25:27,108 logging_middleware 89577 8409888832 Response: GET / 200 (0.01s)
+INFO 2025-06-14 02:25:27,124 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:27,124 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:27,127 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:27,127 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:27,127 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:27,127 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:27,131 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.01s)
+INFO 2025-06-14 02:25:27,131 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.01s)
+INFO 2025-06-14 02:25:27,132 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.00s)
+INFO 2025-06-14 02:25:27,132 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.00s)
+WARNING 2025-06-14 02:25:27,132 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:27,132 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.00s)
+WARNING 2025-06-14 02:25:27,132 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:27,132 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.00s)
+WARNING 2025-06-14 02:25:27,133 log 89579 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2025-06-14 02:25:27,133 log 89579 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2025-06-14 02:25:27,133 log 89577 8409888832 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2025-06-14 02:25:27,133 log 89577 8409888832 Not Found: /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:27,134 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:27,135 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:27,135 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:27,134 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:27,137 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:27,137 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:27,143 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.01s)
+INFO 2025-06-14 02:25:27,143 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.01s)
+INFO 2025-06-14 02:25:27,143 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.01s)
+WARNING 2025-06-14 02:25:27,144 log 89578 8409888832 Not Found: /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:27,143 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.01s)
+INFO 2025-06-14 02:25:27,144 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.01s)
+WARNING 2025-06-14 02:25:27,144 log 89578 8409888832 Not Found: /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:27,144 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.01s)
+WARNING 2025-06-14 02:25:27,145 log 89579 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+WARNING 2025-06-14 02:25:27,145 log 89577 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2025-06-14 02:25:27,145 log 89579 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+WARNING 2025-06-14 02:25:27,145 log 89577 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:27,145 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:27,145 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:27,146 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:27,146 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:27,146 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:27,146 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:27,150 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.00s)
+INFO 2025-06-14 02:25:27,150 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+INFO 2025-06-14 02:25:27,150 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.00s)
+INFO 2025-06-14 02:25:27,150 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+INFO 2025-06-14 02:25:27,151 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:27,151 log 89578 8409888832 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:27,151 log 89577 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:27,151 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:27,151 log 89577 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2025-06-14 02:25:27,151 log 89578 8409888832 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:27,152 log 89579 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2025-06-14 02:25:27,152 log 89579 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:27,171 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:27,171 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:27,172 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:27,172 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:27,177 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.01s)
+INFO 2025-06-14 02:25:27,177 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.01s)
+WARNING 2025-06-14 02:25:27,178 log 89579 8409888832 Not Found: /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:27,178 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.01s)
+WARNING 2025-06-14 02:25:27,178 log 89579 8409888832 Not Found: /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:27,178 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.01s)
+WARNING 2025-06-14 02:25:27,179 log 89578 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+WARNING 2025-06-14 02:25:27,179 log 89578 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:28,355 logging_middleware 89579 8409888832 Request: GET /
+INFO 2025-06-14 02:25:28,355 logging_middleware 89579 8409888832 Request: GET /
+INFO 2025-06-14 02:25:28,357 logging_middleware 89579 8409888832 Response: GET / 200 (0.00s)
+INFO 2025-06-14 02:25:28,357 logging_middleware 89579 8409888832 Response: GET / 200 (0.00s)
+INFO 2025-06-14 02:25:28,368 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:28,368 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:28,369 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:28,369 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:28,369 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:28,369 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:28,372 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.00s)
+INFO 2025-06-14 02:25:28,372 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.00s)
+INFO 2025-06-14 02:25:28,372 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.00s)
+WARNING 2025-06-14 02:25:28,372 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:28,372 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.00s)
+WARNING 2025-06-14 02:25:28,372 log 89578 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2025-06-14 02:25:28,373 log 89577 8409888832 Not Found: /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:28,373 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.00s)
+WARNING 2025-06-14 02:25:28,373 log 89577 8409888832 Not Found: /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:28,373 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.00s)
+WARNING 2025-06-14 02:25:28,374 log 89579 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:28,374 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/default.css
+WARNING 2025-06-14 02:25:28,374 log 89579 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:28,374 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:28,377 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:28,379 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:28,377 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:28,379 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:28,381 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.01s)
+INFO 2025-06-14 02:25:28,381 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.01s)
+WARNING 2025-06-14 02:25:28,382 log 89578 8409888832 Not Found: /static/rest_framework/css/default.css
+WARNING 2025-06-14 02:25:28,382 log 89578 8409888832 Not Found: /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:28,383 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.00s)
+INFO 2025-06-14 02:25:28,383 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:28,383 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.00s)
+INFO 2025-06-14 02:25:28,383 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:28,383 log 89577 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2025-06-14 02:25:28,383 log 89577 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:28,384 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.01s)
+INFO 2025-06-14 02:25:28,384 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.01s)
+INFO 2025-06-14 02:25:28,385 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:28,385 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+WARNING 2025-06-14 02:25:28,385 log 89579 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+WARNING 2025-06-14 02:25:28,385 log 89579 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:28,387 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:28,387 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:28,389 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.01s)
+INFO 2025-06-14 02:25:28,389 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.01s)
+INFO 2025-06-14 02:25:28,389 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:28,389 log 89578 8409888832 Not Found: /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:28,390 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:28,389 log 89578 8409888832 Not Found: /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:28,389 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+INFO 2025-06-14 02:25:28,390 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:28,390 log 89577 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2025-06-14 02:25:28,390 log 89579 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2025-06-14 02:25:28,390 log 89577 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2025-06-14 02:25:28,390 log 89579 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:28,406 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:28,406 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:28,406 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:28,406 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:28,409 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.00s)
+INFO 2025-06-14 02:25:28,409 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.00s)
+INFO 2025-06-14 02:25:28,410 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+WARNING 2025-06-14 02:25:28,410 log 89578 8409888832 Not Found: /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:28,410 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+WARNING 2025-06-14 02:25:28,410 log 89578 8409888832 Not Found: /static/rest_framework/js/default.js
+WARNING 2025-06-14 02:25:28,410 log 89579 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+WARNING 2025-06-14 02:25:28,410 log 89579 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:31,643 logging_middleware 89579 8409888832 Request: GET /api/courses/
+INFO 2025-06-14 02:25:31,643 logging_middleware 89579 8409888832 Request: GET /api/courses/
+ERROR 2025-06-14 02:25:31,647 exception_handler 89579 8409888832 Exception in <registration.views.CourseViewSet object at 0x3133fbd70>: Authentication credentials were not provided. - Response: {'detail': ErrorDetail(string='Authentication credentials were not provided.', code='not_authenticated')}
+INFO 2025-06-14 02:25:31,650 logging_middleware 89579 8409888832 Response: GET /api/courses/ 401 (0.01s)
+INFO 2025-06-14 02:25:31,650 logging_middleware 89579 8409888832 Response: GET /api/courses/ 401 (0.01s)
+WARNING 2025-06-14 02:25:31,651 log 89579 8409888832 Unauthorized: /api/courses/
+WARNING 2025-06-14 02:25:31,651 log 89579 8409888832 Unauthorized: /api/courses/
+INFO 2025-06-14 02:25:31,672 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:31,672 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:31,672 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:31,672 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:31,672 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:31,672 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/css/prettify.css
+INFO 2025-06-14 02:25:31,676 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.00s)
+INFO 2025-06-14 02:25:31,676 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/bootstrap.min.css 404 (0.00s)
+WARNING 2025-06-14 02:25:31,677 log 89577 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2025-06-14 02:25:31,677 log 89577 8409888832 Not Found: /static/rest_framework/css/bootstrap.min.css
+INFO 2025-06-14 02:25:31,678 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.01s)
+INFO 2025-06-14 02:25:31,678 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.01s)
+INFO 2025-06-14 02:25:31,678 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/css/prettify.css 404 (0.01s)
+INFO 2025-06-14 02:25:31,678 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/css/bootstrap-tweaks.css 404 (0.01s)
+INFO 2025-06-14 02:25:31,679 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/default.css
+WARNING 2025-06-14 02:25:31,679 log 89578 8409888832 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2025-06-14 02:25:31,679 log 89579 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:31,679 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/css/default.css
+WARNING 2025-06-14 02:25:31,679 log 89578 8409888832 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2025-06-14 02:25:31,679 log 89579 8409888832 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+INFO 2025-06-14 02:25:31,681 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:31,681 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:31,681 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/ajax-form.js
+INFO 2025-06-14 02:25:31,681 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:31,683 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.00s)
+INFO 2025-06-14 02:25:31,683 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/css/default.css 404 (0.00s)
+WARNING 2025-06-14 02:25:31,685 log 89577 8409888832 Not Found: /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:31,685 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.00s)
+INFO 2025-06-14 02:25:31,685 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:31,685 log 89577 8409888832 Not Found: /static/rest_framework/css/default.css
+INFO 2025-06-14 02:25:31,685 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/ajax-form.js 404 (0.00s)
+INFO 2025-06-14 02:25:31,685 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/jquery-3.7.1.min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:31,686 log 89579 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2025-06-14 02:25:31,686 log 89578 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+WARNING 2025-06-14 02:25:31,686 log 89579 8409888832 Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2025-06-14 02:25:31,686 log 89578 8409888832 Not Found: /static/rest_framework/js/jquery-3.7.1.min.js
+INFO 2025-06-14 02:25:31,687 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:31,687 logging_middleware 89577 8409888832 Request: GET /static/rest_framework/js/csrf.js
+INFO 2025-06-14 02:25:31,687 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:31,687 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:31,688 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:31,688 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:31,691 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.00s)
+INFO 2025-06-14 02:25:31,691 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+INFO 2025-06-14 02:25:31,691 logging_middleware 89577 8409888832 Response: GET /static/rest_framework/js/csrf.js 404 (0.00s)
+INFO 2025-06-14 02:25:31,691 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/bootstrap.min.js 404 (0.00s)
+INFO 2025-06-14 02:25:31,691 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:31,692 log 89577 8409888832 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:31,692 log 89577 8409888832 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2025-06-14 02:25:31,692 log 89579 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+INFO 2025-06-14 02:25:31,691 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/prettify-min.js 404 (0.00s)
+WARNING 2025-06-14 02:25:31,692 log 89579 8409888832 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2025-06-14 02:25:31,694 log 89578 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2025-06-14 02:25:31,694 log 89578 8409888832 Not Found: /static/rest_framework/js/prettify-min.js
+INFO 2025-06-14 02:25:31,711 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:31,711 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:31,711 logging_middleware 89579 8409888832 Request: GET /static/rest_framework/js/default.js
+INFO 2025-06-14 02:25:31,711 logging_middleware 89578 8409888832 Request: GET /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:25:31,714 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.00s)
+INFO 2025-06-14 02:25:31,714 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+INFO 2025-06-14 02:25:31,714 logging_middleware 89579 8409888832 Response: GET /static/rest_framework/js/default.js 404 (0.00s)
+INFO 2025-06-14 02:25:31,714 logging_middleware 89578 8409888832 Response: GET /static/rest_framework/js/load-ajax-form.js 404 (0.00s)
+WARNING 2025-06-14 02:25:31,714 log 89579 8409888832 Not Found: /static/rest_framework/js/default.js
+WARNING 2025-06-14 02:25:31,714 log 89578 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+WARNING 2025-06-14 02:25:31,714 log 89579 8409888832 Not Found: /static/rest_framework/js/default.js
+WARNING 2025-06-14 02:25:31,714 log 89578 8409888832 Not Found: /static/rest_framework/js/load-ajax-form.js
+INFO 2025-06-14 02:30:46,425 logging_middleware 93890 8409888832 Request: GET /admin
+INFO 2025-06-14 02:30:46,425 logging_middleware 93890 8409888832 Request: GET /admin
+DEBUG 2025-06-14 02:30:47,982 urls 93890 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:30:47,982 urls 93890 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:30:47,988 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110fee80> (Name: login)
+DEBUG 2025-06-14 02:30:47,988 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110fee80> (Name: login)
+DEBUG 2025-06-14 02:30:47,988 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff060> (Name: logout)
+DEBUG 2025-06-14 02:30:47,988 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff060> (Name: logout)
+DEBUG 2025-06-14 02:30:47,989 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff1a0> (Name: user-info)
+DEBUG 2025-06-14 02:30:47,989 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff1a0> (Name: user-info)
+DEBUG 2025-06-14 02:30:47,989 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff2e0> (Name: token_refresh)
+DEBUG 2025-06-14 02:30:47,989 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff2e0> (Name: token_refresh)
+DEBUG 2025-06-14 02:30:47,989 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff560> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:30:47,989 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff560> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:30:47,990 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff6a0> (Name: student-dashboard)
+DEBUG 2025-06-14 02:30:47,990 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff6a0> (Name: student-dashboard)
+DEBUG 2025-06-14 02:30:47,990 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff7e0> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:30:47,990 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff7e0> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:30:47,991 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff920> (Name: registration-request)
+DEBUG 2025-06-14 02:30:47,991 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ff920> (Name: registration-request)
+DEBUG 2025-06-14 02:30:47,991 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ffb00> (Name: registration-request-list)
+DEBUG 2025-06-14 02:30:47,991 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ffb00> (Name: registration-request-list)
+DEBUG 2025-06-14 02:30:47,991 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ffce0> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:30:47,991 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ffce0> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:30:47,992 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ffe20> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:30:47,992 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110ffe20> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:30:47,992 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110fff60> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:30:47,992 urls 93890 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x3110fff60> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:30:47,993 urls 93890 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+DEBUG 2025-06-14 02:30:47,993 urls 93890 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+INFO 2025-06-14 02:30:47,999 logging_middleware 93890 8409888832 Response: GET /admin 404 (1.57s)
+INFO 2025-06-14 02:30:47,999 logging_middleware 93890 8409888832 Response: GET /admin 404 (1.57s)
+INFO 2025-06-14 02:30:48,006 logging_middleware 93888 8409888832 Request: GET /admin/
+INFO 2025-06-14 02:30:48,006 logging_middleware 93888 8409888832 Request: GET /admin/
+DEBUG 2025-06-14 02:30:49,067 urls 93888 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:30:49,067 urls 93888 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:30:49,074 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8ade0> (Name: login)
+DEBUG 2025-06-14 02:30:49,074 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8ade0> (Name: login)
+DEBUG 2025-06-14 02:30:49,075 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8afc0> (Name: logout)
+DEBUG 2025-06-14 02:30:49,075 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8afc0> (Name: logout)
+DEBUG 2025-06-14 02:30:49,075 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8b100> (Name: user-info)
+DEBUG 2025-06-14 02:30:49,075 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8b100> (Name: user-info)
+DEBUG 2025-06-14 02:30:49,076 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8b240> (Name: token_refresh)
+DEBUG 2025-06-14 02:30:49,076 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8b240> (Name: token_refresh)
+DEBUG 2025-06-14 02:30:49,076 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8b4c0> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:30:49,076 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8b4c0> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:30:49,076 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8b600> (Name: student-dashboard)
+DEBUG 2025-06-14 02:30:49,076 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8b600> (Name: student-dashboard)
+DEBUG 2025-06-14 02:30:49,077 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8b740> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:30:49,077 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8b740> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:30:49,077 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8b880> (Name: registration-request)
+DEBUG 2025-06-14 02:30:49,077 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8b880> (Name: registration-request)
+DEBUG 2025-06-14 02:30:49,078 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8ba60> (Name: registration-request-list)
+DEBUG 2025-06-14 02:30:49,078 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8ba60> (Name: registration-request-list)
+DEBUG 2025-06-14 02:30:49,078 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8bc40> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:30:49,078 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8bc40> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:30:49,078 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8bd80> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:30:49,078 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8bd80> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:30:49,079 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8bec0> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:30:49,079 urls 93888 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x311a8bec0> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:30:49,079 urls 93888 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+DEBUG 2025-06-14 02:30:49,079 urls 93888 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+INFO 2025-06-14 02:30:49,089 logging_middleware 93888 8409888832 Response: GET /admin/ 302 (1.08s)
+INFO 2025-06-14 02:30:49,089 logging_middleware 93888 8409888832 Response: GET /admin/ 302 (1.08s)
+INFO 2025-06-14 02:30:49,091 logging_middleware 93890 8409888832 Request: GET /admin/login/?next=/admin/
+INFO 2025-06-14 02:30:49,091 logging_middleware 93890 8409888832 Request: GET /admin/login/?next=/admin/
+INFO 2025-06-14 02:30:49,119 logging_middleware 93890 8409888832 Response: GET /admin/login/?next=/admin/ 200 (0.03s)
+INFO 2025-06-14 02:30:49,119 logging_middleware 93890 8409888832 Response: GET /admin/login/?next=/admin/ 200 (0.03s)
+INFO 2025-06-14 02:30:49,213 logging_middleware 93890 8409888832 Request: GET /static/admin/css/base.css
+INFO 2025-06-14 02:30:49,213 logging_middleware 93890 8409888832 Request: GET /static/admin/css/base.css
+INFO 2025-06-14 02:30:49,216 logging_middleware 93890 8409888832 Response: GET /static/admin/css/base.css 404 (0.00s)
+INFO 2025-06-14 02:30:49,216 logging_middleware 93890 8409888832 Response: GET /static/admin/css/base.css 404 (0.00s)
+INFO 2025-06-14 02:30:49,215 logging_middleware 93888 8409888832 Request: GET /static/admin/css/dark_mode.css
+WARNING 2025-06-14 02:30:49,217 log 93890 8409888832 Not Found: /static/admin/css/base.css
+WARNING 2025-06-14 02:30:49,217 log 93890 8409888832 Not Found: /static/admin/css/base.css
+INFO 2025-06-14 02:30:49,218 logging_middleware 93890 8409888832 Request: GET /static/admin/css/login.css
+INFO 2025-06-14 02:30:49,218 logging_middleware 93890 8409888832 Request: GET /static/admin/css/login.css
+INFO 2025-06-14 02:30:49,217 logging_middleware 93889 8409888832 Request: GET /static/admin/css/nav_sidebar.css
+INFO 2025-06-14 02:30:49,215 logging_middleware 93888 8409888832 Request: GET /static/admin/css/dark_mode.css
+INFO 2025-06-14 02:30:49,217 logging_middleware 93889 8409888832 Request: GET /static/admin/css/nav_sidebar.css
+INFO 2025-06-14 02:30:49,228 logging_middleware 93890 8409888832 Response: GET /static/admin/css/login.css 404 (0.01s)
+INFO 2025-06-14 02:30:49,228 logging_middleware 93890 8409888832 Response: GET /static/admin/css/login.css 404 (0.01s)
+WARNING 2025-06-14 02:30:49,229 log 93890 8409888832 Not Found: /static/admin/css/login.css
+WARNING 2025-06-14 02:30:49,229 log 93890 8409888832 Not Found: /static/admin/css/login.css
+INFO 2025-06-14 02:30:49,231 logging_middleware 93890 8409888832 Request: GET /static/admin/css/responsive.css
+INFO 2025-06-14 02:30:49,231 logging_middleware 93890 8409888832 Request: GET /static/admin/css/responsive.css
+INFO 2025-06-14 02:30:49,236 logging_middleware 93888 8409888832 Response: GET /static/admin/css/dark_mode.css 404 (0.02s)
+INFO 2025-06-14 02:30:49,236 logging_middleware 93888 8409888832 Response: GET /static/admin/css/dark_mode.css 404 (0.02s)
+WARNING 2025-06-14 02:30:49,237 log 93888 8409888832 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-06-14 02:30:49,237 log 93888 8409888832 Not Found: /static/admin/css/dark_mode.css
+INFO 2025-06-14 02:30:49,239 logging_middleware 93890 8409888832 Response: GET /static/admin/css/responsive.css 404 (0.01s)
+INFO 2025-06-14 02:30:49,239 logging_middleware 93890 8409888832 Response: GET /static/admin/css/responsive.css 404 (0.01s)
+WARNING 2025-06-14 02:30:49,242 log 93890 8409888832 Not Found: /static/admin/css/responsive.css
+WARNING 2025-06-14 02:30:49,242 log 93890 8409888832 Not Found: /static/admin/css/responsive.css
+INFO 2025-06-14 02:30:49,291 logging_middleware 93890 8409888832 Request: GET /static/admin/js/nav_sidebar.js
+INFO 2025-06-14 02:30:49,291 logging_middleware 93888 8409888832 Request: GET /static/admin/js/theme.js
+INFO 2025-06-14 02:30:49,291 logging_middleware 93890 8409888832 Request: GET /static/admin/js/nav_sidebar.js
+INFO 2025-06-14 02:30:49,291 logging_middleware 93888 8409888832 Request: GET /static/admin/js/theme.js
+INFO 2025-06-14 02:30:49,294 logging_middleware 93890 8409888832 Response: GET /static/admin/js/nav_sidebar.js 404 (0.00s)
+INFO 2025-06-14 02:30:49,294 logging_middleware 93890 8409888832 Response: GET /static/admin/js/nav_sidebar.js 404 (0.00s)
+INFO 2025-06-14 02:30:49,295 logging_middleware 93888 8409888832 Response: GET /static/admin/js/theme.js 404 (0.00s)
+WARNING 2025-06-14 02:30:49,295 log 93890 8409888832 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-06-14 02:30:49,295 log 93890 8409888832 Not Found: /static/admin/js/nav_sidebar.js
+INFO 2025-06-14 02:30:49,295 logging_middleware 93888 8409888832 Response: GET /static/admin/js/theme.js 404 (0.00s)
+WARNING 2025-06-14 02:30:49,295 log 93888 8409888832 Not Found: /static/admin/js/theme.js
+WARNING 2025-06-14 02:30:49,295 log 93888 8409888832 Not Found: /static/admin/js/theme.js
+DEBUG 2025-06-14 02:30:50,451 urls 93889 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:30:50,451 urls 93889 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:30:50,457 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8ae80> (Name: login)
+DEBUG 2025-06-14 02:30:50,457 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8ae80> (Name: login)
+DEBUG 2025-06-14 02:30:50,458 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b060> (Name: logout)
+DEBUG 2025-06-14 02:30:50,458 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b060> (Name: logout)
+DEBUG 2025-06-14 02:30:50,458 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b1a0> (Name: user-info)
+DEBUG 2025-06-14 02:30:50,458 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b1a0> (Name: user-info)
+DEBUG 2025-06-14 02:30:50,459 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b2e0> (Name: token_refresh)
+DEBUG 2025-06-14 02:30:50,459 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b2e0> (Name: token_refresh)
+DEBUG 2025-06-14 02:30:50,459 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b560> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:30:50,459 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b560> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:30:50,460 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b6a0> (Name: student-dashboard)
+DEBUG 2025-06-14 02:30:50,460 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b6a0> (Name: student-dashboard)
+DEBUG 2025-06-14 02:30:50,460 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b7e0> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:30:50,460 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b7e0> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:30:50,460 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b920> (Name: registration-request)
+DEBUG 2025-06-14 02:30:50,460 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8b920> (Name: registration-request)
+DEBUG 2025-06-14 02:30:50,461 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8bb00> (Name: registration-request-list)
+DEBUG 2025-06-14 02:30:50,461 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8bb00> (Name: registration-request-list)
+DEBUG 2025-06-14 02:30:50,461 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8bce0> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:30:50,461 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8bce0> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:30:50,461 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8be20> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:30:50,461 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8be20> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:30:50,462 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8bf60> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:30:50,462 urls 93889 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x318a8bf60> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:30:50,462 urls 93889 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+DEBUG 2025-06-14 02:30:50,462 urls 93889 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+INFO 2025-06-14 02:30:50,467 logging_middleware 93889 8409888832 Response: GET /static/admin/css/nav_sidebar.css 404 (1.25s)
+INFO 2025-06-14 02:30:50,467 logging_middleware 93889 8409888832 Response: GET /static/admin/css/nav_sidebar.css 404 (1.25s)
+WARNING 2025-06-14 02:30:50,468 log 93889 8409888832 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-06-14 02:30:50,468 log 93889 8409888832 Not Found: /static/admin/css/nav_sidebar.css
+INFO 2025-06-14 02:33:42,719 logging_middleware 95578 8409888832 Request: GET /admin/login/?next=/admin/
+INFO 2025-06-14 02:33:42,719 logging_middleware 95578 8409888832 Request: GET /admin/login/?next=/admin/
+DEBUG 2025-06-14 02:33:43,948 urls 95578 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:33:43,948 urls 95578 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:33:43,954 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09ea20> (Name: login)
+DEBUG 2025-06-14 02:33:43,954 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09ea20> (Name: login)
+DEBUG 2025-06-14 02:33:43,955 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09ec00> (Name: logout)
+DEBUG 2025-06-14 02:33:43,955 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09ec00> (Name: logout)
+DEBUG 2025-06-14 02:33:43,955 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09ed40> (Name: user-info)
+DEBUG 2025-06-14 02:33:43,955 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09ed40> (Name: user-info)
+DEBUG 2025-06-14 02:33:43,956 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09ee80> (Name: token_refresh)
+DEBUG 2025-06-14 02:33:43,956 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09ee80> (Name: token_refresh)
+DEBUG 2025-06-14 02:33:43,956 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f100> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:33:43,956 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f100> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:33:43,957 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f240> (Name: student-dashboard)
+DEBUG 2025-06-14 02:33:43,957 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f240> (Name: student-dashboard)
+DEBUG 2025-06-14 02:33:43,957 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f380> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:33:43,957 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f380> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:33:43,957 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f4c0> (Name: registration-request)
+DEBUG 2025-06-14 02:33:43,957 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f4c0> (Name: registration-request)
+DEBUG 2025-06-14 02:33:43,958 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f6a0> (Name: registration-request-list)
+DEBUG 2025-06-14 02:33:43,958 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f6a0> (Name: registration-request-list)
+DEBUG 2025-06-14 02:33:43,958 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f880> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:33:43,958 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f880> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:33:43,959 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f9c0> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:33:43,959 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09f9c0> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:33:43,959 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09fb00> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:33:43,959 urls 95578 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16f09fb00> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:33:43,959 urls 95578 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+DEBUG 2025-06-14 02:33:43,959 urls 95578 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+INFO 2025-06-14 02:33:43,983 logging_middleware 95578 8409888832 Response: GET /admin/login/?next=/admin/ 200 (1.26s)
+INFO 2025-06-14 02:33:43,983 logging_middleware 95578 8409888832 Response: GET /admin/login/?next=/admin/ 200 (1.26s)
+INFO 2025-06-14 02:33:45,332 logging_middleware 95577 8409888832 Request: GET /api/courses/
+INFO 2025-06-14 02:33:45,332 logging_middleware 95577 8409888832 Request: GET /api/courses/
+DEBUG 2025-06-14 02:33:46,564 urls 95577 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:33:46,564 urls 95577 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:33:46,571 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89ec00> (Name: login)
+DEBUG 2025-06-14 02:33:46,571 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89ec00> (Name: login)
+DEBUG 2025-06-14 02:33:46,571 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89ede0> (Name: logout)
+DEBUG 2025-06-14 02:33:46,571 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89ede0> (Name: logout)
+DEBUG 2025-06-14 02:33:46,572 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89ef20> (Name: user-info)
+DEBUG 2025-06-14 02:33:46,572 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89ef20> (Name: user-info)
+DEBUG 2025-06-14 02:33:46,572 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89f060> (Name: token_refresh)
+DEBUG 2025-06-14 02:33:46,572 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89f060> (Name: token_refresh)
+DEBUG 2025-06-14 02:33:46,572 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89f2e0> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:33:46,572 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89f2e0> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:33:46,573 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89f420> (Name: student-dashboard)
+DEBUG 2025-06-14 02:33:46,573 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89f420> (Name: student-dashboard)
+DEBUG 2025-06-14 02:33:46,573 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89f560> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:33:46,573 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89f560> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:33:46,574 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89f6a0> (Name: registration-request)
+DEBUG 2025-06-14 02:33:46,574 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89f6a0> (Name: registration-request)
+DEBUG 2025-06-14 02:33:46,574 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89f880> (Name: registration-request-list)
+DEBUG 2025-06-14 02:33:46,574 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89f880> (Name: registration-request-list)
+DEBUG 2025-06-14 02:33:46,574 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89fa60> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:33:46,574 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89fa60> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:33:46,575 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89fba0> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:33:46,575 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89fba0> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:33:46,575 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89fce0> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:33:46,575 urls 95577 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16c89fce0> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:33:46,576 urls 95577 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+DEBUG 2025-06-14 02:33:46,576 urls 95577 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+ERROR 2025-06-14 02:33:46,578 exception_handler 95577 8409888832 Exception in <registration.views.CourseViewSet object at 0x105c29850>: Authentication credentials were not provided. - Response: {'detail': ErrorDetail(string='Authentication credentials were not provided.', code='not_authenticated')}
+INFO 2025-06-14 02:33:46,597 logging_middleware 95577 8409888832 Response: GET /api/courses/ 401 (1.27s)
+INFO 2025-06-14 02:33:46,597 logging_middleware 95577 8409888832 Response: GET /api/courses/ 401 (1.27s)
+WARNING 2025-06-14 02:33:46,598 log 95577 8409888832 Unauthorized: /api/courses/
+WARNING 2025-06-14 02:33:46,598 log 95577 8409888832 Unauthorized: /api/courses/
+INFO 2025-06-14 02:33:48,436 logging_middleware 95579 8409888832 Request: GET /api/courses/
+INFO 2025-06-14 02:33:48,436 logging_middleware 95579 8409888832 Request: GET /api/courses/
+DEBUG 2025-06-14 02:33:49,595 urls 95579 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:33:49,595 urls 95579 8409888832 Registering URL Pattern: ([<URLPattern '' [name='index']>, <URLPattern 'login/' [name='login']>, <URLPattern 'logout/' [name='logout']>, <URLPattern 'password_change/' [name='password_change']>, <URLPattern 'password_change/done/' [name='password_change_done']>, <URLPattern 'autocomplete/' [name='autocomplete']>, <URLPattern 'jsi18n/' [name='jsi18n']>, <URLPattern 'r/<int:content_type_id>/<path:object_id>/' [name='view_on_site']>, <URLResolver <URLPattern list> (None:None) 'auth/group/'>, <URLResolver <URLPattern list> (None:None) 'registration/organization/'>, <URLResolver <URLPattern list> (None:None) 'registration/class/'>, <URLResolver <URLPattern list> (None:None) 'registration/section/'>, <URLResolver <URLPattern list> (None:None) 'registration/course/'>, <URLResolver <URLPattern list> (None:None) 'registration/faculty/'>, <URLResolver <URLPattern list> (None:None) 'registration/student/'>, <URLResolver <URLPattern list> (None:None) 'registration/enrollment/'>, <URLResolver <URLPattern list> (None:None) 'registration/grade/'>, <URLPattern '^(?P<app_label>auth|registration)/$' [name='app_list']>, <URLPattern '(?P<url>.*)$'>], 'admin', 'custom_admin') (Name: admin)
+DEBUG 2025-06-14 02:33:49,600 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e612ca0> (Name: login)
+DEBUG 2025-06-14 02:33:49,600 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e612ca0> (Name: login)
+DEBUG 2025-06-14 02:33:49,601 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e612e80> (Name: logout)
+DEBUG 2025-06-14 02:33:49,601 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e612e80> (Name: logout)
+DEBUG 2025-06-14 02:33:49,601 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e612fc0> (Name: user-info)
+DEBUG 2025-06-14 02:33:49,601 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e612fc0> (Name: user-info)
+DEBUG 2025-06-14 02:33:49,602 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613100> (Name: token_refresh)
+DEBUG 2025-06-14 02:33:49,602 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613100> (Name: token_refresh)
+DEBUG 2025-06-14 02:33:49,602 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613380> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:33:49,602 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613380> (Name: admin-dashboard)
+DEBUG 2025-06-14 02:33:49,603 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e6134c0> (Name: student-dashboard)
+DEBUG 2025-06-14 02:33:49,603 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e6134c0> (Name: student-dashboard)
+DEBUG 2025-06-14 02:33:49,603 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613600> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:33:49,603 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613600> (Name: faculty-dashboard)
+DEBUG 2025-06-14 02:33:49,604 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613740> (Name: registration-request)
+DEBUG 2025-06-14 02:33:49,604 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613740> (Name: registration-request)
+DEBUG 2025-06-14 02:33:49,604 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613920> (Name: registration-request-list)
+DEBUG 2025-06-14 02:33:49,604 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613920> (Name: registration-request-list)
+DEBUG 2025-06-14 02:33:49,605 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613b00> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:33:49,605 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613b00> (Name: registration-request-detail)
+DEBUG 2025-06-14 02:33:49,605 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613c40> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:33:49,605 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613c40> (Name: registration-request-approve)
+DEBUG 2025-06-14 02:33:49,605 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613d80> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:33:49,605 urls 95579 8409888832 Registering URL Pattern: <function View.as_view.<locals>.view at 0x16e613d80> (Name: registration-request-reject)
+DEBUG 2025-06-14 02:33:49,606 urls 95579 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+DEBUG 2025-06-14 02:33:49,606 urls 95579 8409888832 Registering URL Pattern: (<module 'registration.urls' from '/Users/apple/Projects/student_registration_app/backend/registration/urls.py'>, None, None) (Name: api_routes)
+ERROR 2025-06-14 02:33:49,607 exception_handler 95579 8409888832 Exception in <registration.views.CourseViewSet object at 0x16c6294f0>: Authentication credentials were not provided. - Response: {'detail': ErrorDetail(string='Authentication credentials were not provided.', code='not_authenticated')}
+INFO 2025-06-14 02:33:49,621 logging_middleware 95579 8409888832 Response: GET /api/courses/ 401 (1.19s)
+INFO 2025-06-14 02:33:49,621 logging_middleware 95579 8409888832 Response: GET /api/courses/ 401 (1.19s)
+WARNING 2025-06-14 02:33:49,622 log 95579 8409888832 Unauthorized: /api/courses/
+WARNING 2025-06-14 02:33:49,622 log 95579 8409888832 Unauthorized: /api/courses/
