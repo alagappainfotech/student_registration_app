@@ -197,6 +197,9 @@ MIDDLEWARE = [
     # Security middleware (first to ensure security headers are set early)
     'django.middleware.security.SecurityMiddleware',
     
+    # WhiteNoise middleware (for serving static files in production)
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
     # Session middleware (needs to be before authentication)
     'django.contrib.sessions.middleware.SessionMiddleware',
     
@@ -528,6 +531,13 @@ ROOT_URLCONF = 'core.urls'
 # Static files configuration
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# WhiteNoise configuration for serving static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Additional WhiteNoise settings
+WHITENOISE_USE_FINDERS = True
+WHITENOISE_AUTOREFRESH = True
 
 TEMPLATES = [
     {
