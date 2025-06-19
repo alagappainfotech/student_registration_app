@@ -34,19 +34,21 @@ export default defineConfig({
       target: 'es2020'
     }
   },
-  server: {
-    port: 5176,
-    host: 'localhost',
-    strictPort: true,
-    open: true,
-    proxy: {
-      '/api': {
-        target: 'http://127.0.0.1:8000',
-        changeOrigin: true,
-        secure: false
-      }
+server: {
+  host: '0.0.0.0',            // Allow access from external network (Docker, LAN etc.)
+  port: 5176,                 // Your desired port
+  strictPort: true,          // Don't fallback to another port if 5176 is busy
+  open: false,               // Prevent auto browser opening
+  allowedHosts: ['aae.alagappainfotech.com'], // Optional — usually used in dev behind a proxy
+  proxy: {
+    '/api': {
+      target: 'https://api.alagappainfotech.com', // ✅ Use https if your backend has SSL
+      changeOrigin: true,
+      secure: false, // ✅ Accept self-signed SSL certificates
+      rewrite: path => path.replace(/^\/api/, '') // ✅ optional: if Django doesn’t expect /api/
     }
-  },
+  }
+},
   build: {
     target: ['es2020', 'safari14'],
     commonjsOptions: {
