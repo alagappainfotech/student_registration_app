@@ -2,7 +2,6 @@ import React, { createContext, useContext, useState, useEffect, useCallback, use
 import axiosInstance from '../services/axiosConfig';
 import { AuthenticationError, NetworkError, Logger } from '../utils/errorHandler';
 import { jwtDecode } from 'jwt-decode';
-import axiosInstance from '@/services/axiosConfig';
 
 // Create the context
 const AuthContext = createContext({
