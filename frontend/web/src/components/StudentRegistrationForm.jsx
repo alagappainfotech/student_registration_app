@@ -109,7 +109,7 @@ export default function StudentRegistrationForm({ token, navigate, studentId }) 
       const controller = new AbortController();
       const signal = controller.signal;
       
-      const response = await.axiosInstance.get(`/api/v1/classes?organization_id=${organizationId}`, {
+      const response = await axiosInstance.get(`/api/v1/classes?organization_id=${organizationId}`, {
         headers: { Authorization: `Bearer ${token}` },
         signal
       });
@@ -139,7 +139,7 @@ export default function StudentRegistrationForm({ token, navigate, studentId }) 
       const controller = new AbortController();
       const signal = controller.signal;
       
-      const response = await.axiosInstance.get(`/api/v1/sections?class_id=${classId}`, {
+      const response = await axiosInstance.get(`/api/v1/sections?class_id=${classId}`, {
         headers: { Authorization: `Bearer ${token}` },
         signal
       });
@@ -168,7 +168,7 @@ export default function StudentRegistrationForm({ token, navigate, studentId }) 
       const controller = new AbortController();
       const signal = controller.signal;
       
-      const response = await.axiosInstance.get(`/api/v1/courses?section_id=${sectionId}`, {
+      const response = await axiosInstance.get(`/api/v1/courses?section_id=${sectionId}`, {
         headers: { Authorization: `Bearer ${token}` },
         signal
       });
@@ -370,14 +370,14 @@ export default function StudentRegistrationForm({ token, navigate, studentId }) 
     try {
       let response;
       if (isEditMode) {
-        response = await.axiosInstance.put(`/api/v1/students/${studentId}`, form, {
+        response = await axiosInstance.put(`/api/v1/students/${studentId}`, form, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
         });
       } else {
-        response = await.axiosInstance.post('/api/v1/students/register', form, {
+        response = await axiosInstance.post('/api/v1/students/register', form, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -469,7 +469,7 @@ export default function StudentRegistrationForm({ token, navigate, studentId }) 
     
     const fetchInitialData = async () => {
       try {
-        const response = await.axiosInstance.get('/api/v1/organizations', {
+        const response = await axiosInstance.get('/api/v1/organizations', {
           headers: { Authorization: `Bearer ${token}` },
           signal
         });
@@ -489,7 +489,7 @@ export default function StudentRegistrationForm({ token, navigate, studentId }) 
       
       try {
         setLoading(true);
-        const response = await.axiosInstance.get(`/api/v1/students/${studentId}`, {
+        const response = await axiosInstance.get(`/api/v1/students/${studentId}`, {
           headers: { Authorization: `Bearer ${token}` },
           signal
         });

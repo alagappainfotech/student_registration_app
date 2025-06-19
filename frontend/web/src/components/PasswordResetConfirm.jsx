@@ -20,7 +20,7 @@ const PasswordResetConfirm = () => {
       return;
     }
     try {
-      await.axiosInstance.post(`/api/auth/password-reset-confirm/${uid}/${token}/`, { password });
+      await axiosInstance.post(`/api/auth/password-reset-confirm/${uid}/${token}/`, { password });
       setMessage('Password reset successful. You can now log in.');
       setTimeout(() => navigate('/login'), 2000);
     } catch (err) {
