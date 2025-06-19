@@ -27,7 +27,7 @@ export default function StudentList() {
   const fetchCourses = async () => {
     const token = localStorage.getItem('access_token');
     try {
-      const response = await axios.get('/api/courses/', {
+      const response = await.axiosInstance.get('/api/courses/', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       setCourses(response.data);
@@ -100,11 +100,11 @@ export default function StudentList() {
     const token = localStorage.getItem('access_token');
     try {
       if (selectedStudent) {
-        await axios.put(`/api/students/${selectedStudent.id}/`, formData, {
+        await.axiosInstance.put(`/api/students/${selectedStudent.id}/`, formData, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
       } else {
-        await axios.post('/api/students/', formData, {
+        await.axiosInstance.post('/api/students/', formData, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
       }
@@ -124,7 +124,7 @@ export default function StudentList() {
     
     const token = localStorage.getItem('access_token');
     try {
-      await axios.delete(`/api/students/${id}/`, {
+      await.axiosInstance.delete(`/api/students/${id}/`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       fetchStudents();
@@ -184,7 +184,7 @@ export default function StudentList() {
       console.log('URL:', `/api/students/${selectedStudent.id}/`);
       console.log('Headers:', { 'Authorization': `Bearer ${token}` });
       
-      const response = await axios.patch(
+      const response = await.axiosInstance.patch(
         `/api/students/${selectedStudent.id}/`,
         updateData,
         { headers: { 'Authorization': `Bearer ${token}` } }
@@ -219,7 +219,7 @@ export default function StudentList() {
     }
 
     try {
-      const response = await axios.get('/api/students/', {
+      const response = await.axiosInstance.get('/api/students/', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       setStudents(response.data);

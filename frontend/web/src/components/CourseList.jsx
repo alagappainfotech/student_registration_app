@@ -103,7 +103,7 @@ const CourseList = () => {
     if (window.confirm('Are you sure you want to delete this course?')) {
       try {
         const token = localStorage.getItem('access_token');
-        await axios.delete(`/api/courses/${id}/`, {
+        await.axiosInstance.delete(`/api/courses/${id}/`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         fetchData();
@@ -126,14 +126,14 @@ const CourseList = () => {
       };
 
       if (selectedCourse) {
-        await axios.put(`/api/courses/${selectedCourse.id}/`, data, {
+        await.axiosInstance.put(`/api/courses/${selectedCourse.id}/`, data, {
           headers: { 
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
         });
       } else {
-        await axios.post('/api/courses/', data, {
+        await.axiosInstance.post('/api/courses/', data, {
           headers: { 
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'

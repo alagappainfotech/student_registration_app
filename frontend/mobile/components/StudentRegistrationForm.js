@@ -19,7 +19,7 @@ export default function StudentRegistrationForm() {
     setLoading(true);
     setError('');
     try {
-      await axios.post('http://localhost:8000/api/students/', form);
+      await.axiosInstance.post('http://localhost:8000/api/students/', form);
       setSuccess(true);
       setForm(initialState);
     } catch (err) {

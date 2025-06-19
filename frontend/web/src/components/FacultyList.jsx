@@ -43,7 +43,7 @@ const FacultyList = ({ userRole }) => {
   const fetchFaculty = async () => {
     try {
       const token = localStorage.getItem('access_token');
-      const response = await axios.get('/api/faculty/', {
+      const response = await.axiosInstance.get('/api/faculty/', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setFaculty(response.data);
@@ -94,7 +94,7 @@ const FacultyList = ({ userRole }) => {
     if (window.confirm('Are you sure you want to delete this faculty member?')) {
       try {
         const token = localStorage.getItem('access_token');
-        await axios.delete(`/api/faculty/${id}/`, {
+        await.axiosInstance.delete(`/api/faculty/${id}/`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         fetchFaculty();
@@ -110,14 +110,14 @@ const FacultyList = ({ userRole }) => {
     try {
       const token = localStorage.getItem('access_token');
       if (selectedFaculty) {
-        await axios.put(`/api/faculty/${selectedFaculty.id}/`, formData, {
+        await.axiosInstance.put(`/api/faculty/${selectedFaculty.id}/`, formData, {
           headers: { 
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
         });
       } else {
-        await axios.post('/api/faculty/', formData, {
+        await.axiosInstance.post('/api/faculty/', formData, {
           headers: { 
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
