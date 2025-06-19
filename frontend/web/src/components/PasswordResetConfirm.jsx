@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { TextField, Button, Box, Typography, Paper } from '@mui/material';
 import axios from 'axios';
+import axiosInstance from '@/services/axiosConfig';
 
 const PasswordResetConfirm = () => {
   const { uid, token } = useParams();

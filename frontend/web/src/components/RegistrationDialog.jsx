@@ -16,6 +16,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import axios from 'axios';
 import useApi from '../hooks/useApi';
 import { getCookie } from '../services/axiosConfig';
+import axiosInstance from '@/services/axiosConfig';
 
 const RegistrationDialog = ({ open: dialogOpen, onClose, onSuccess }) => {
   const { post, loading, error } = useApi();
