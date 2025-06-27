@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import {
   Box,
   Button,
@@ -51,10 +50,10 @@ const CourseList = () => {
     try {
       const token = localStorage.getItem('access_token');
       const [coursesRes, facultyRes] = await Promise.all([
-        axios.get('/api/courses/', {
+        axiosInstance.get('/api/courses/', {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get('/api/faculty/', {
+        axiosInstance.get('/api/faculty/', {
           headers: { Authorization: `Bearer ${token}` }
         })
       ]);
