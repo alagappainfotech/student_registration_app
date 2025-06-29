@@ -244,28 +244,44 @@ class RegistrationRequestApproveView(APIView):
             temp_password = generate_temporary_password()
             logger.info(f"Generated temporary password")
             
-            # Create the user
             try:
+                # First, check if a user with this email already exists
+                if User.objects.filter(email=registration_request.email).exists():
+                    error_msg = f"A user with email {registration_request.email} already exists"
+                    logger.error(error_msg)
+                    return Response(
+                        {'error': 'User already exists', 'details': error_msg},
+                        status=status.HTTP_400_BAD_REQUEST
+                    )
+                
+                # Create the user
+                # Extract first and last name from the full name
+                name_parts = registration_request.name.split(' ', 1)
+                first_name = name_parts[0]
+                last_name = name_parts[1] if len(name_parts) > 1 else ''
+                
                 user = User.objects.create_user(
                     email=registration_request.email,
                     password=temp_password,
-                    first_name=registration_request.first_name,
-                    last_name=registration_request.last_name,
+                    first_name=first_name,
+                    last_name=last_name,
                     is_active=True
                 )
-                logger.info(f"Created user: {user}")
+                logger.info(f"Created user: {user}")                
                 
-                # Create a profile for the user
-                profile = Profile.objects.create(
-                    user=user,
-                    phone_number=registration_request.phone_number,
-                    address=registration_request.address,
-                    date_of_birth=registration_request.date_of_birth,
-                    gender=registration_request.gender,
-                    role=registration_request.role,
-                    organization=registration_request.organization
-                )
-                logger.info(f"Created profile: {profile}")
+                # Create a profile for the user with error handling for required fields
+                try:
+                    # Create profile with only the fields that exist in the Profile model
+                    profile = Profile.objects.create(
+                        user=user,
+                        role=registration_request.role
+                    )
+                    logger.info(f"Created profile: {profile}")
+                except Exception as profile_error:
+                    # If profile creation fails, delete the user to maintain data integrity
+                    user.delete()
+                    logger.error(f"Error creating profile: {str(profile_error)}", exc_info=True)
+                    raise Exception(f"Failed to create user profile: {str(profile_error)}")
                 
                 # If the user is a student, create a student record
                 if registration_request.role == 'student':
@@ -313,10 +329,30 @@ class RegistrationRequestApproveView(APIView):
                 
             except Exception as e:
                 logger.error(f"Error creating user or profile: {str(e)}", exc_info=True)
-                return Response(
-                    {'error': 'Failed to create user account', 'details': str(e)},
-                    status=status.HTTP_500_INTERNAL_SERVER_ERROR
-                )
+                
+                # Log more details to diagnose the issue
+                logger.error(f"Registration request data: email={registration_request.email}, " +
+                            f"name={registration_request.name}, " +
+                           f"role={registration_request.role}, " +
+                           f"class_enrolled={registration_request.class_enrolled}, " +
+                           f"section={registration_request.section}")
+                
+                # Check for specific types of errors
+                if 'duplicate' in str(e).lower() or 'unique' in str(e).lower():
+                    return Response(
+                        {'error': 'A user with this email already exists', 'details': str(e)},
+                        status=status.HTTP_400_BAD_REQUEST
+                    )
+                elif 'null' in str(e).lower() or 'not null' in str(e).lower():
+                    return Response(
+                        {'error': 'Missing required fields', 'details': str(e)},
+                        status=status.HTTP_400_BAD_REQUEST
+                    )
+                else:
+                    return Response(
+                        {'error': 'Failed to create user account', 'details': str(e)},
+                        status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                    )
                 
         except RegistrationRequest.DoesNotExist:
             error_msg = f"Registration request not found with ID: {id}"

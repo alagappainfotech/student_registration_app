@@ -26,6 +26,8 @@ const PasswordResetRequest = React.lazy(() => import('./components/PasswordReset
 const PasswordResetConfirm = React.lazy(() => import('./components/PasswordResetConfirm'));
 const LandingPage = React.lazy(() => import('./components/LandingPage'));
 const AboutUs = React.lazy(() => import('./components/AboutUs'));
+const PrivacyPolicy = React.lazy(() => import('./components/PrivacyPolicy'));
+const TermsOfService = React.lazy(() => import('./components/TermsOfService'));
 
 // Loading component for Suspense fallback
 const LoadingFallback = () => (
@@ -196,6 +198,16 @@ const AppContent = () => {
             <Route path="/about" element={
               <React.Suspense fallback={<LoadingFallback />}>
                 <AboutUs />
+              </React.Suspense>
+            } />
+            <Route path="/privacy-policy" element={
+              <React.Suspense fallback={<LoadingFallback />}>
+                <PrivacyPolicy />
+              </React.Suspense>
+            } />
+            <Route path="/terms-of-service" element={
+              <React.Suspense fallback={<LoadingFallback />}>
+                <TermsOfService />
               </React.Suspense>
             } />
             <Route path="/landing" element={<LandingPage />} />

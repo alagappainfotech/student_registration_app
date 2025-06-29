@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
   Box,
   Button,
@@ -27,7 +28,6 @@ import {
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
-import axiosInstance from '@/services/axiosConfig';
 
 const CourseList = () => {
   const [courses, setCourses] = useState([]);
@@ -50,10 +50,10 @@ const CourseList = () => {
     try {
       const token = localStorage.getItem('access_token');
       const [coursesRes, facultyRes] = await Promise.all([
-        axiosInstance.get('/api/courses/', {
+        axios.get('/api/courses/', {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axiosInstance.get('/api/faculty/', {
+        axios.get('/api/faculty/', {
           headers: { Authorization: `Bearer ${token}` }
         })
       ]);
@@ -78,7 +78,7 @@ const CourseList = () => {
       code: '',
       description: '',
       fees: '',
-      primary_faculty: '',
+      primary_faculty: faculty.length > 0 ? faculty[0].id : '',
       daily_duration: '',
       total_duration: ''
     });
@@ -103,7 +103,7 @@ const CourseList = () => {
     if (window.confirm('Are you sure you want to delete this course?')) {
       try {
         const token = localStorage.getItem('access_token');
-        await axiosInstance.delete(`/api/courses/${id}/`, {
+        await axios.delete(`/api/courses/${id}/`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         fetchData();
@@ -120,30 +120,36 @@ const CourseList = () => {
       const token = localStorage.getItem('access_token');
       const data = {
         ...formData,
-        fees: parseFloat(formData.fees),
-        daily_duration: parseInt(formData.daily_duration),
-        total_duration: parseInt(formData.total_duration)
+        fees: parseFloat(formData.fees) || 0,
+        daily_duration: parseInt(formData.daily_duration, 10) || 0,
+        total_duration: parseInt(formData.total_duration, 10) || 0
       };
 
+      console.log('Submitting course data:', data);
+
       if (selectedCourse) {
-        await axiosInstance.put(`/api/courses/${selectedCourse.id}/`, data, {
+        await axios.put(`/api/courses/${selectedCourse.id}/`, data, {
           headers: { 
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
         });
       } else {
-        await axiosInstance.post('/api/courses/', data, {
+        const response = await axios.post('/api/courses/', data, {
           headers: { 
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
         });
+        console.log('Course created successfully:', response.data);
       }
       setOpenDialog(false);
       fetchData();
     } catch (error) {
       console.error('Failed to save course:', error);
+      if (error.response?.data) {
+        console.error('Error details:', JSON.stringify(error.response.data));
+      }
       setError('Failed to save course. Please try again.');
     }
   };
@@ -260,10 +266,13 @@ const CourseList = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <FormControl fullWidth required>
-                    <InputLabel>Primary Faculty</InputLabel>
+                    <InputLabel id="primary-faculty-label">Primary Faculty</InputLabel>
                     <Select
+                      labelId="primary-faculty-label"
+                      id="primary-faculty"
                       name="primary_faculty"
                       value={formData.primary_faculty}
+                      label="Primary Faculty"
                       onChange={handleChange}
                     >
                       {faculty.map((f) => (

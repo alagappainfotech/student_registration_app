@@ -12,7 +12,7 @@ const PasswordResetRequest = () => {
     setError('');
     setMessage('');
     try {
-      await axiosInstance.post('/api/auth/password-reset/', { email });
+      await axios.post('/api/auth/password-reset/', { email });
       setMessage('Password reset email sent. Please check your inbox.');
     } catch (err) {
       setError('Unable to send reset email.');

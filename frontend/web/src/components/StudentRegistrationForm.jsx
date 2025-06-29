@@ -16,7 +16,6 @@ import {
 } from '@mui/material';
 import { ArrowBack, Save } from '@mui/icons-material';
 import { CircularProgress } from '@mui/material';
-import axiosInstance from '@/services/axiosConfig';
 
 // Memoize form components to prevent unnecessary re-renders
 const MemoizedSelect = React.memo(({ value, onChange, label, children, error, helperText, disabled, ...props }) => (
@@ -110,12 +109,14 @@ export default function StudentRegistrationForm({ token, navigate, studentId }) 
       const controller = new AbortController();
       const signal = controller.signal;
       
-      const response = await axiosInstance.get(`/api/v1/classes?organization_id=${organizationId}`, {
+      // Updated to use the correct API endpoint
+      const response = await axios.get(`/api/classes?organization_id=${organizationId}`, {
         headers: { Authorization: `Bearer ${token}` },
         signal
       });
       
       if (!signal.aborted) {
+        console.log('Classes fetched:', response.data);
         setData(prev => ({ ...prev, classes: response.data }));
         setForm(prev => ({ 
           ...prev, 
@@ -140,12 +141,14 @@ export default function StudentRegistrationForm({ token, navigate, studentId }) 
       const controller = new AbortController();
       const signal = controller.signal;
       
-      const response = await axiosInstance.get(`/api/v1/sections?class_id=${classId}`, {
+      // Updated to use the correct API endpoint
+      const response = await axios.get(`/api/sections?class_id=${classId}`, {
         headers: { Authorization: `Bearer ${token}` },
         signal
       });
       
       if (!signal.aborted) {
+        console.log('Sections fetched:', response.data);
         setData(prev => ({ ...prev, sections: response.data }));
         setForm(prev => ({ 
           ...prev, 
@@ -169,12 +172,14 @@ export default function StudentRegistrationForm({ token, navigate, studentId }) 
       const controller = new AbortController();
       const signal = controller.signal;
       
-      const response = await axiosInstance.get(`/api/v1/courses?section_id=${sectionId}`, {
+      // Updated to use the correct API endpoint
+      const response = await axios.get(`/api/courses?section_id=${sectionId}`, {
         headers: { Authorization: `Bearer ${token}` },
         signal
       });
       
       if (!signal.aborted) {
+        console.log('Courses fetched:', response.data);
         setData(prev => ({ ...prev, courses: response.data }));
         setForm(prev => ({ ...prev, courses_ids: [] }));
       }
@@ -371,14 +376,14 @@ export default function StudentRegistrationForm({ token, navigate, studentId }) 
     try {
       let response;
       if (isEditMode) {
-        response = await axiosInstance.put(`/api/v1/students/${studentId}`, form, {
+        response = await axios.put(`/api/v1/students/${studentId}`, form, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
         });
       } else {
-        response = await axiosInstance.post('/api/v1/students/register', form, {
+        response = await axios.post('/api/v1/students/register', form, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -470,7 +475,7 @@ export default function StudentRegistrationForm({ token, navigate, studentId }) 
     
     const fetchInitialData = async () => {
       try {
-        const response = await axiosInstance.get('/api/v1/organizations', {
+        const response = await axios.get('/api/v1/organizations', {
           headers: { Authorization: `Bearer ${token}` },
           signal
         });
@@ -490,7 +495,7 @@ export default function StudentRegistrationForm({ token, navigate, studentId }) 
       
       try {
         setLoading(true);
-        const response = await axiosInstance.get(`/api/v1/students/${studentId}`, {
+        const response = await axios.get(`/api/v1/students/${studentId}`, {
           headers: { Authorization: `Bearer ${token}` },
           signal
         });

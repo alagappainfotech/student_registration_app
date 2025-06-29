@@ -52,8 +52,8 @@ const karaikudiContact = {
   city: "Karaikudi",
   address: "Alagappa Group of Educational Institution, Alagappa Puram, Karaikudi.",
   phones: ["7708784364", "9789285627"],
-  emails: ["nehru@alagappa.org.com"],
-  person: "Mr. G. Nehru"
+  emails: ["preethika@alagappa.org"],
+  person: "Ms. Preethika M"
 };
 
 const MainFooter = ({ onScrollTo }) => {
@@ -219,54 +219,6 @@ const MainFooter = ({ onScrollTo }) => {
             <ContactInfo location={karaikudiContact} />
           </Grid>
         </Grid>
-
-        {/* Copyright */}
-        <Box 
-          sx={{ 
-            mt: 6, 
-            pt: 3, 
-            borderTop: `1px solid ${theme.palette.grey[800]}`,
-            display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            gap: 2
-          }}
-        >
-          <Typography variant="body2" sx={{ opacity: 0.8, textAlign: { xs: 'center', sm: 'left' } }}>
-            &copy; {new Date().getFullYear()} Alagappa Academy of Excellence. All rights reserved.
-          </Typography>
-          <Box sx={{ display: 'flex', gap: 2 }}>
-            <MuiLink 
-              href="#" 
-              variant="body2" 
-              sx={{ 
-                color: 'inherit', 
-                opacity: 0.8,
-                '&:hover': { 
-                  color: 'primary.light',
-                  opacity: 1
-                } 
-              }}
-            >
-              Privacy Policy
-            </MuiLink>
-            <MuiLink 
-              href="#" 
-              variant="body2" 
-              sx={{ 
-                color: 'inherit', 
-                opacity: 0.8,
-                '&:hover': { 
-                  color: 'primary.light',
-                  opacity: 1
-                } 
-              }}
-            >
-              Terms of Service
-            </MuiLink>
-          </Box>
-        </Box>
       </Container>
     </Box>
   );

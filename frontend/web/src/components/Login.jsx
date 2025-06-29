@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
 // Material-UI Components
-import {
-  Box,
-  Button,
-  TextField,
-  Typography,
-  Paper,
-  Avatar,
-  Alert,
+import { 
+  Box, 
+  Button, 
+  TextField, 
+  Typography, 
+  Paper, 
+  Avatar, 
+  Alert, 
   CircularProgress,
   IconButton,
   Link
@@ -46,32 +46,32 @@ class TokenRefreshError extends Error {
 // Get dashboard route based on user role
 const getUserDashboardRoute = (role) => {
   console.log('Determining dashboard route for role:', role);
-
+  
   if (!role) {
     console.warn('No role provided, defaulting to student dashboard');
     return '/student';
   }
-
+  
   const normalizedRole = role.toString().toLowerCase().trim();
-
+  
   switch (normalizedRole) {
     case 'faculty':
     case 'teacher':
     case 'instructor':
       console.log('Redirecting to faculty dashboard');
       return '/faculty';
-
+      
     case 'student':
     case 'learner':
       console.log('Redirecting to student dashboard');
       return '/student';
-
+      
     case 'admin':
     case 'administrator':
     case 'superuser':
       console.log('Redirecting to admin dashboard');
       return '/admin';
-
+      
     default:
       console.warn(`Unknown role '${role}', defaulting to student dashboard`);
       return '/student';
@@ -82,7 +82,7 @@ const Login = () => {
   // Validate login form inputs
   const validateLoginInputs = useCallback((username, password) => {
     const errors = {};
-
+    
     if (!username) {
       errors.username = 'Username is required';
     } else if (username.length < 3) {
@@ -137,22 +137,22 @@ const Login = () => {
   const validateForm = useCallback(() => {
     const errors = {};
     let isValid = true;
-
+    
     if (!loginState.username.trim()) {
       errors.username = 'Username is required';
       isValid = false;
     }
-
+    
     if (!loginState.password) {
       errors.password = 'Password is required';
       isValid = false;
     }
-
+    
     setLoginState(prev => ({
       ...prev,
       formErrors: errors
     }));
-
+    
     return isValid;
   }, [loginState.username, loginState.password]);
 
@@ -160,34 +160,34 @@ const Login = () => {
   const handleLogin = useCallback(
     async (e) => {
       e.preventDefault();
-
+      
       // Clear any previous errors
       setLoginState(prev => ({ ...prev, error: '' }));
-
+      
       // Validate form
       if (!validateForm()) {
         return;
       }
-
+      
       // Set loading state
       setLoginState(prev => ({ ...prev, isLoading: true }));
-
+      
       // Make login request with timeout
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-
+      
       try {
         // Get CSRF token
         console.log('Fetching CSRF token...');
         await axiosInstance.get('/api/csrf/');
-
+        
         // Prepare login data
         const loginData = {
           email: loginState.username,  // Use email as username
           password: loginState.password
         };
         console.log('Login request data:', loginData);
-
+        
         // Make login request
         const response = await axiosInstance.post('/api/login/', loginData, {
           signal: controller.signal,
@@ -199,17 +199,17 @@ const Login = () => {
           withCredentials: true,
           validateStatus: status => status < 500 // Don't throw for 4xx errors
         });
-
+        
         // Handle 401 Unauthorized
         if (response.status === 401) {
           throw new Error('Invalid email or password. Please try again.');
         }
-
+        
         // Log the response for debugging
         console.log('Login response status:', response.status);
         console.log('Login response headers:', response.headers);
         console.log('Login response data:', response.data);
-
+        
         // Process the response
         if (!response.data) {
           throw new Error('No data in response');
@@ -217,7 +217,7 @@ const Login = () => {
 
         // Handle the response format from our backend
         let accessToken, refreshToken, userRole, userData = {};
-
+        
         // Handle different response formats
         if (response.data.tokens?.access) {
           // Format: {tokens: {access, refresh}, user: {...}}
@@ -226,7 +226,7 @@ const Login = () => {
           userRole = response.data.user?.role || 'student';
           userData = response.data.user || {};
           console.log('Using standard format (tokens.access)');
-        }
+        } 
         // Fallback to other formats for backward compatibility
         else if (response.data.access_token) {
           // Format: {access_token, refresh_token, user, userRole}
@@ -253,20 +253,20 @@ const Login = () => {
           console.error('Unexpected response format. Available keys:', Object.keys(response.data));
           throw new Error('Invalid response format from server');
         }
-
+        
         if (!accessToken) {
           throw new Error('No access token received from server');
         }
-
+        
         // Store tokens
         localStorage.setItem('access_token', accessToken);
         if (refreshToken) {
           localStorage.setItem('refresh_token', refreshToken);
         }
-
+        
         // Set auth header for future requests
         setAuthHeader(accessToken);
-
+        
         // Update user context
         setUser({
           ...userData,
@@ -274,36 +274,36 @@ const Login = () => {
           token: accessToken,
           role: userRole
         });
-
+        
         // Store user role in localStorage for persistence
         localStorage.setItem('user_role', userRole);
         console.log('User authenticated successfully. Role:', userRole);
-
+        
         // Navigate to appropriate dashboard
         const dashboardRoute = getUserDashboardRoute(userRole);
         console.log('Navigation: Redirecting to', dashboardRoute);
-
+        
         // Small delay to ensure state is updated before navigation
         setTimeout(() => {
           navigate(dashboardRoute, { replace: true });
         }, 100);
-
+        
         return response;
-
+        
       } catch (error) {
         // Clean up timeout if it exists
         if (timeoutId) clearTimeout(timeoutId);
-
+        
         console.error('Login error:', error);
-
+        
         // Handle different types of errors
         let errorMessage = 'Login failed. Please try again.';
-
+        
         if (error.response) {
           // Server responded with an error status code
           console.error('Response data:', error.response.data);
           console.error('Response status:', error.response.status);
-
+          
           if (error.response.status === 401) {
             errorMessage = 'Invalid email or password. Please try again.';
           } else if (error.response.data?.detail) {
@@ -320,14 +320,14 @@ const Login = () => {
           // Other errors
           errorMessage = error.message || 'An unexpected error occurred.';
         }
-
+        
         // Update state with error message
         setLoginState(prev => ({
           ...prev,
           isLoading: false,
           error: errorMessage
         }));
-
+        
         return null;
       }
     },
@@ -467,7 +467,7 @@ const Login = () => {
             </Typography>
           </Box>
 
-          <Box sx={{
+          <Box sx={{ 
             minHeight: loginState.error ? 'auto' : 0,
             overflow: 'hidden',
             transition: 'min-height 0.3s ease-in-out',
@@ -499,10 +499,7 @@ const Login = () => {
 
           <Box
             component="form"
-            onSubmit={(e) => {
-  e.preventDefault();
-  handleLogin(e);
-}}
+            onSubmit={handleLogin}
             noValidate
             autoComplete="off"
             sx={{
@@ -521,7 +518,7 @@ const Login = () => {
               },
             }}
           >
-            <Box>
+            <Box onClick={(e) => e.stopPropagation()}>
               <TextField
                 margin="none"
                 required
@@ -533,6 +530,8 @@ const Login = () => {
                 autoFocus
                 value={loginState.username}
                 onChange={handleChange}
+                onClick={(e) => e.stopPropagation()}
+                onFocus={(e) => e.stopPropagation()}
                 variant="outlined"
                 error={!!loginState.formErrors.username}
                 helperText={loginState.formErrors.username || ' '}
@@ -571,8 +570,7 @@ const Login = () => {
                 }}
               />
             </Box>
-
-            <Box>
+            <Box onClick={(e) => e.stopPropagation()}>
               <TextField
                 margin="none"
                 required
@@ -584,21 +582,22 @@ const Login = () => {
                 autoComplete="current-password"
                 value={loginState.password}
                 onChange={handleChange}
+                onClick={(e) => e.stopPropagation()}
+                onFocus={(e) => e.stopPropagation()}
                 variant="outlined"
                 error={!!loginState.formErrors.password}
                 helperText={loginState.formErrors.password || ' '}
                 InputProps={{
                   endAdornment: (
                     <IconButton
-                      type="button"
                       onClick={(e) => {
-                        e.preventDefault();
                         e.stopPropagation();
                         togglePasswordVisibility();
                       }}
                       edge="end"
                       aria-label="toggle password visibility"
                       size="medium"
+                      onMouseDown={(e) => e.preventDefault()} // Prevent focus loss
                     >
                       {loginState.showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
                     </IconButton>
@@ -639,14 +638,18 @@ const Login = () => {
                 }}
               />
             </Box>
-
-            <Box>
+            
+            <Box onClick={(e) => e.stopPropagation()}>
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 color="primary"
                 size="large"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleButtonClick(e);
+                }}
                 disabled={loginState.isLoading}
                 sx={{
                   mt: 2,
@@ -679,7 +682,6 @@ const Login = () => {
               </Button>
             </Box>
           </Box>
-
 
           <Box
             sx={{

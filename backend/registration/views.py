@@ -27,7 +27,23 @@ class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAdminUser]
+    permission_classes = [IsAuthenticated]  # Allow any authenticated user to access courses
+    
+    def get_queryset(self):
+        queryset = Course.objects.all()
+        section_id = self.request.query_params.get('section_id', None)
+        
+        if section_id:
+            # Get all students in this section
+            students_in_section = Student.objects.filter(section_id=section_id)
+            # Get all course IDs associated with these students
+            course_ids = set()
+            for student in students_in_section:
+                course_ids.update(student.courses.values_list('id', flat=True))
+            # Filter courses by these IDs
+            queryset = queryset.filter(id__in=course_ids)
+            
+        return queryset
 
 class ClassListView(generics.ListAPIView):
     queryset = Class.objects.all()

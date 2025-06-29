@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { TextField, Button, Box, Typography, Paper } from '@mui/material';
 import axios from 'axios';
-import axiosInstance from '@/services/axiosConfig';
 
 const PasswordResetConfirm = () => {
   const { uid, token } = useParams();
@@ -21,7 +20,7 @@ const PasswordResetConfirm = () => {
       return;
     }
     try {
-      await axiosInstance.post(`/api/auth/password-reset-confirm/${uid}/${token}/`, { password });
+      await axios.post(`/api/auth/password-reset-confirm/${uid}/${token}/`, { password });
       setMessage('Password reset successful. You can now log in.');
       setTimeout(() => navigate('/login'), 2000);
     } catch (err) {

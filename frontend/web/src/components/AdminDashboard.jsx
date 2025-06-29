@@ -918,8 +918,10 @@ const AdminDashboard = () => {
                 <Typography variant="subtitle1" color="text.secondary">
                   <strong>Requested on:</strong> {selectedRequest?.created_at}
                 </Typography>
-                <Typography variant="subtitle1" color="text.secondary">
-                  <strong>Status:</strong> 
+                <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                  <Typography variant="subtitle1" color="text.secondary" component="span">
+                    <strong>Status:</strong>
+                  </Typography>
                   <Chip 
                     label={selectedRequest?.status.toUpperCase()} 
                     color={
@@ -929,7 +931,7 @@ const AdminDashboard = () => {
                     size="small" 
                     sx={{ ml: 1 }}
                   />
-                </Typography>
+                </Box>
                 {selectedRequest?.processed_at && (
                   <Typography variant="subtitle1" color="text.secondary">
                     <strong>Processed on:</strong> {selectedRequest.processed_at}
@@ -970,15 +972,17 @@ const AdminDashboard = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <Typography variant="subtitle2" color="text.secondary">Requested Role</Typography>
-                  <Typography variant="body1" gutterBottom>
-                    {selectedRequest?.role ? (
+                  {selectedRequest?.role ? (
+                    <Box sx={{ mt: 0.5 }}>
                       <Chip 
                         label={selectedRequest.role.toUpperCase()} 
                         color="primary"
                         size="small"
                       />
-                    ) : 'N/A'}
-                  </Typography>
+                    </Box>
+                  ) : (
+                    <Typography variant="body1" gutterBottom>N/A</Typography>
+                  )}
                 </Grid>
                 {selectedRequest?.message && (
                   <Grid item xs={12}>

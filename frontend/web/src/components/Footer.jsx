@@ -28,7 +28,7 @@ const Footer = () => {
           </Typography>
           <Box sx={{ display: 'flex', gap: 3 }}>
             <Link 
-              href="#" 
+              href="/privacy-policy"  
               variant="body2" 
               sx={{ 
                 color: 'inherit', 
@@ -43,7 +43,7 @@ const Footer = () => {
               Privacy Policy
             </Link>
             <Link 
-              href="#" 
+              href="/terms-of-service"  
               variant="body2" 
               sx={{ 
                 color: 'inherit', 

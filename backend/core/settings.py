@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-g**)8t(4h4gidl2$o^mxo!cz*l$isy)jp1rl8^wv-2)4q1q-&i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.42','localhost','127.0.0.1','192.168.1.42:8000','192.168.1.42:5173', 'api.alagappainfotech.com','ace.alagappainfotech.com']
+ALLOWED_HOSTS = ['192.168.1.42','localhost','127.0.0.1','192.168.1.42:8000','192.168.1.42:5173']
 
 # Allow local frontend dev server for CSRF and CORS
 CSRF_TRUSTED_ORIGINS = [
@@ -39,9 +39,7 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5174",
     "http://127.0.0.1:5174",
     "http://localhost:8000",
-    "http://127.0.0.1:8000",
-    "https://api.alagappainfotech.com",
-    "https://aae.alagappainfotech.com",
+    "http://127.0.0.1:8000"
 ]
 
 # CORS settings for development
@@ -58,8 +56,6 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:5173',
     'http://localhost:8000',
     'http://127.0.0.1:8000',
-    'https://api.alagappainfotech.com',
-    'https://aae.alagappainfotech.com',
 ]
 
 # Allow all headers and methods for development
@@ -201,9 +197,6 @@ MIDDLEWARE = [
     # Security middleware (first to ensure security headers are set early)
     'django.middleware.security.SecurityMiddleware',
     
-    # WhiteNoise middleware (for serving static files in production)
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    
     # Session middleware (needs to be before authentication)
     'django.contrib.sessions.middleware.SessionMiddleware',
     
@@ -247,8 +240,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:5176',  # Vite dev server (frontend)
     'http://127.0.0.1:8000',  # Django dev server
     'http://192.168.1.42:8000',  # Local network
-    'http://192.168.1.42:5176',  # Local network (frontend),
-    'https://aae.alagappainfotech.com'
+    'http://192.168.1.42:5176',  # Local network (frontend)
 ]
 
 # CORS Preflight cache duration (in seconds)
@@ -365,9 +357,7 @@ CSRF_TRUSTED_ORIGINS = CORS_ALLOWED_ORIGINS if hasattr(globals(), 'CORS_ALLOWED_
     'http://127.0.0.1:5176',  # Vite dev server (frontend)
     'http://127.0.0.1:8000',  # Django dev server
     'http://192.168.1.42:8000',  # Local network
-    'http://192.168.1.42:5176',  # Local network (frontend),
-    'https://aae.alagappainfotech.com',
-    'https://api.alagappainfotech.com',
+    'http://192.168.1.42:5176',  # Local network (frontend)
 ]
 REST_FRAMEWORK = {
     # Authentication & Permissions
@@ -538,13 +528,6 @@ ROOT_URLCONF = 'core.urls'
 # Static files configuration
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# WhiteNoise configuration for serving static files
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# Additional WhiteNoise settings
-WHITENOISE_USE_FINDERS = True
-WHITENOISE_AUTOREFRESH = True
 
 TEMPLATES = [
     {

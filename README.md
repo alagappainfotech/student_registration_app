@@ -370,3 +370,42 @@ The frontend will be available at [http://localhost:5173](http://localhost:5173)
 - For API issues, verify the backend is running on port 8000 and frontend is proxying requests correctly.
 
 ---
+Here's a Linux command to check the PIDs for processes running on the ports used by your backend, frontend, and mobile services, and then kill them:
+
+bash
+Copy
+# Find and kill processes for common development ports
+echo "Finding and killing processes on development ports..."
+
+# Backend ports (Django typically runs on 8000)
+echo "Checking backend ports (8000)..."
+lsof -ti:8000 | xargs -r kill -9
+
+# Frontend ports (Vite uses ports in the 5173-5176 range)
+echo "Checking frontend ports (5173-5176)..."
+lsof -ti:5173-5176 | xargs -r kill -9
+
+# Mobile dev server ports (common ports for React Native/Expo)
+echo "Checking mobile ports (19000-19006, 8081)..."
+lsof -ti:19000-19006,8081 | xargs -r kill -9
+
+echo "All development processes terminated."
+
+lsof -ti:8000,5173-5176,19000-19006,8081 | xargs -r kill -9
+
+You can run this as one command or break it into individual lines. The -r flag for xargs ensures it won't try to execute kill if no processes are found.
+
+If you want to see what processes are running before killing them, you can use this command first:
+
+bash
+echo "Backend processes:"
+lsof -i:8000
+
+echo "Frontend processes:"
+lsof -i:5173-5176
+
+echo "Mobile processes:"
+lsof -i:19000-19006,8081
+This will show you all the details about which processes are using these ports before you decide to kill them.
+
+----

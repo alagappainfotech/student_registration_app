@@ -407,8 +407,8 @@ const karaikudiContact = {
   city: "Karaikudi",
   address: "Alagappa Group of Educational Institution, Alagappa Puram, Karaikudi.",
   phones: ["7708784364", "9789285627"],
-  emails: ["nehru@alagappa.org.com"],
-  person: "Mr. G. Nehru"
+  emails: ["preethika@alagappa.org"],
+  person: "Ms. Preethika M"
 };
 
 const contactLocations = [chennaiContact, karaikudiContact];
@@ -515,10 +515,18 @@ const AppBarComponent = ({ onRegisterClick, onScrollTo }) => {
   const [scrolled, setScrolled] = useState(false);
   
   useEffect(() => {
+    // Throttled scroll handler to improve performance
+    let ticking = false;
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const isScrolled = window.scrollY > 10;
+          if (isScrolled !== scrolled) {
+            setScrolled(isScrolled);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
     
@@ -630,7 +638,7 @@ const AppBarComponent = ({ onRegisterClick, onScrollTo }) => {
                   minWidth: '40px',
                   transition: 'all 0.3s ease-in-out',
                   // Show colored logo on white background, white logo on colored background
-                  filter: scrolled ? 'none' : 'brightness(0) invert(1)',
+                  filter: 'none', /* Removed filter that was making logo invisible */
                   backgroundColor: 'transparent',
                   objectFit: 'contain',
                   display: 'block',
@@ -815,9 +823,6 @@ const LandingPage = () => {
             </Box>
             <Typography variant="overline" sx={{ display: 'block', color: 'rgba(255,255,255,0.9)', letterSpacing: '1px', mb: 0.5, fontWeight: 500 }}>
               Alagappa Academy of Excellence
-            </Typography>
-            <Typography variant="h6" component="p" sx={{ color: 'rgba(255,255,255,0.8)', fontStyle:'italic', fontSize:'1rem', mb:1}}>
-                (A unit of Alagappa Institute of Technology)
             </Typography>
           </Box>
           

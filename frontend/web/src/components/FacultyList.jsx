@@ -19,15 +19,19 @@ import {
   DialogContent,
   DialogActions,
   TextField,
-  Grid
+  Grid,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem
 } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
-import axiosInstance from '@/services/axiosConfig';
 
 const FacultyList = ({ userRole }) => {
   const [faculty, setFaculty] = useState([]);
+  const [organizations, setOrganizations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
@@ -38,31 +42,40 @@ const FacultyList = ({ userRole }) => {
     phone: '',
     qualification: '',
     specialization: '',
+    organization_id: '',
     years_of_experience: ''
   });
 
-  const fetchFaculty = async () => {
+  const fetchData = async () => {
     try {
       const token = localStorage.getItem('access_token');
-      const response = await axiosInstance.get('/api/faculty/', {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      setFaculty(response.data);
+      const [facultyRes, orgsRes] = await Promise.all([
+        axios.get('/api/faculty/', {
+          headers: { Authorization: `Bearer ${token}` }
+        }),
+        axios.get('/api/organizations/', {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+      ]);
+      
+      console.log('Organizations data:', orgsRes.data);
+      setFaculty(facultyRes.data);
+      setOrganizations(orgsRes.data);
       setLoading(false);
     } catch (error) {
-      console.error('Failed to fetch faculty:', error);
+      console.error('Failed to fetch data:', error);
       if (error.response?.status === 401 || error.response?.status === 403) {
         // Handle unauthorized access
         setError('You do not have permission to access this page.');
       } else {
-        setError('Failed to load faculty list. Please try again.');
+        setError('Failed to load data. Please try again.');
       }
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchFaculty();
+    fetchData();
   }, []);
 
   const handleAdd = () => {
@@ -73,6 +86,7 @@ const FacultyList = ({ userRole }) => {
       phone: '',
       qualification: '',
       specialization: '',
+      organization_id: organizations.length > 0 ? organizations[0].id : '',
       years_of_experience: ''
     });
     setOpenDialog(true);
@@ -86,6 +100,7 @@ const FacultyList = ({ userRole }) => {
       phone: faculty.phone || '',
       qualification: faculty.qualification || '',
       specialization: faculty.specialization || '',
+      organization_id: faculty.organization?.id || '',
       years_of_experience: faculty.years_of_experience || ''
     });
     setOpenDialog(true);
@@ -95,10 +110,10 @@ const FacultyList = ({ userRole }) => {
     if (window.confirm('Are you sure you want to delete this faculty member?')) {
       try {
         const token = localStorage.getItem('access_token');
-        await axiosInstance.delete(`/api/faculty/${id}/`, {
+        await axios.delete(`/api/faculty/${id}/`, {
           headers: { Authorization: `Bearer ${token}` }
         });
-        fetchFaculty();
+        fetchData();
       } catch (error) {
         console.error('Failed to delete faculty:', error);
         setError('Failed to delete faculty member. Please try again.');
@@ -110,25 +125,38 @@ const FacultyList = ({ userRole }) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('access_token');
+      
+      // Parse numeric fields before submission
+      const data = {
+        ...formData,
+        years_of_experience: parseInt(formData.years_of_experience, 10) || 0
+      };
+      
+      console.log('Submitting faculty data:', data);
+      
       if (selectedFaculty) {
-        await axiosInstance.put(`/api/faculty/${selectedFaculty.id}/`, formData, {
+        await axios.put(`/api/faculty/${selectedFaculty.id}/`, data, {
           headers: { 
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
         });
       } else {
-        await axiosInstance.post('/api/faculty/', formData, {
+        const response = await axios.post('/api/faculty/', data, {
           headers: { 
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
         });
+        console.log('Faculty created successfully:', response.data);
       }
       setOpenDialog(false);
-      fetchFaculty();
+      fetchData();
     } catch (error) {
       console.error('Failed to save faculty:', error);
+      if (error.response?.data) {
+        console.error('Error details:', JSON.stringify(error.response.data));
+      }
       setError('Failed to save faculty member. Please try again.');
     }
   };
@@ -248,6 +276,25 @@ const FacultyList = ({ userRole }) => {
                     onChange={handleChange}
                     required
                   />
+                </Grid>
+                <Grid item xs={12}>
+                  <FormControl fullWidth required>
+                    <InputLabel id="organization-label">Organization</InputLabel>
+                    <Select
+                      labelId="organization-label"
+                      id="organization"
+                      name="organization_id"
+                      value={formData.organization_id}
+                      label="Organization"
+                      onChange={handleChange}
+                    >
+                      {organizations.map((org) => (
+                        <MenuItem key={org.id} value={org.id}>
+                          {org.name}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
                 </Grid>
                 <Grid item xs={12}>
                   <TextField

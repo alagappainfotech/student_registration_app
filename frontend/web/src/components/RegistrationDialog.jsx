@@ -16,7 +16,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import axios from 'axios';
 import useApi from '../hooks/useApi';
 import { getCookie } from '../services/axiosConfig';
-import axiosInstance from '@/services/axiosConfig';
 
 const RegistrationDialog = ({ open: dialogOpen, onClose, onSuccess }) => {
   const { post, loading, error } = useApi();
@@ -91,13 +90,11 @@ const RegistrationDialog = ({ open: dialogOpen, onClose, onSuccess }) => {
         console.log('No CSRF token found in cookies, fetching new one...');
         
         // Make sure to use the full URL with the base URL
-        const response = await axiosInstance.get(`${baseURL}/api/csrf/`, { 
+        const response = await axios.get(`${baseURL}/api/csrf/`, { 
           withCredentials: true,
           headers: {
             'Accept': 'application/json'
-          },
-          // Don't include credentials for the CSRF request
-          withCredentials: true
+          }
         });
         
         // Get the CSRF token from the response cookies
@@ -170,7 +167,7 @@ const RegistrationDialog = ({ open: dialogOpen, onClose, onSuccess }) => {
       const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
       
       // Make the request directly with axios to avoid any potential issues with the useApi hook
-      const response = await axiosInstance.post(
+      const response = await axios.post(
         `${baseURL}/api/registration-request/`,
         registrationData,
         {

@@ -7,12 +7,12 @@ import {
 } from '@mui/material';
 import { Edit as EditIcon, Delete as DeleteIcon } from '@mui/icons-material';
 import axios from 'axios';
-import axiosInstance from '@/services/axiosConfig';
 
 export default function StudentList() {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [courses, setCourses] = useState([]);
+  const [loadingCourses, setLoadingCourses] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
   const [openEnrollDialog, setOpenEnrollDialog] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState(null);
@@ -26,14 +26,66 @@ export default function StudentList() {
   const [selectedCourses, setSelectedCourses] = useState([]);
 
   const fetchCourses = async () => {
-    const token = localStorage.getItem('access_token');
     try {
-      const response = await axiosInstance.get('/api/courses/', {
-        headers: { 'Authorization': `Bearer ${token}` }
-      });
-      setCourses(response.data);
+      console.log('Starting course fetch operation...');
+      setLoadingCourses(true); // Set loading state
+      
+      const token = localStorage.getItem('access_token');
+      if (!token) {
+        console.error('No access token found. Cannot fetch courses.');
+        return [];
+      }
+
+      console.log('Fetching courses with token:', token.substring(0, 10) + '...');
+      
+      // Try both endpoints to ensure compatibility
+      let response;
+      try {
+        // First try without the trailing slash
+        console.log('Attempting to fetch courses from /api/courses');
+        response = await axios.get('/api/courses', {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+      } catch (firstError) {
+        console.warn('First attempt failed, trying with trailing slash:', firstError.message);
+        // If that fails, try with a trailing slash
+        console.log('Attempting to fetch courses from /api/courses/');
+        response = await axios.get('/api/courses/', {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+      }
+      
+      console.log('Courses API response status:', response.status);
+      console.log('Courses API response headers:', response.headers);
+      
+      if (response.data && Array.isArray(response.data)) {
+        console.log(`Successfully loaded ${response.data.length} courses:`, JSON.stringify(response.data, null, 2));
+        
+        // Ensure all course objects have the expected properties
+        const processedCourses = response.data.map(course => ({
+          ...course,
+          id: String(course.id), // Ensure ID is a string
+          name: course.name || 'Unnamed Course'
+        }));
+        
+        console.log('Processed courses:', processedCourses);
+        setCourses(processedCourses);
+        return processedCourses;
+      } else {
+        console.error('Invalid courses data format:', response.data);
+        setCourses([]); // Set empty array to avoid mapping errors
+        return [];
+      }
     } catch (error) {
-      console.error('Error fetching courses:', error);
+      console.error('Error fetching courses:', 
+        error.response ? 
+          `Status: ${error.response.status}, Data: ${JSON.stringify(error.response.data)}` : 
+          error.message
+      );
+      setCourses([]); // Set empty array to avoid mapping errors
+      return [];
+    } finally {
+      setLoadingCourses(false); // Always reset loading state
     }
   };
 
@@ -73,13 +125,45 @@ export default function StudentList() {
     });
   };
 
-  const handleOpenEnrollDialog = (student) => {
-    console.log('Opening enrollment dialog for student:', student);
-    setSelectedStudent(student);
-    const courseIds = student.courses?.map(course => course.id) || [];
-    console.log('Setting initial selected courses:', courseIds);
-    setSelectedCourses(courseIds);
+  const handleOpenEnrollDialog = async (student) => {
+    console.log('Opening enrollment dialog for student:', JSON.stringify(student));
+    
+    // First set the dialog state and student
     setOpenEnrollDialog(true);
+    setSelectedStudent(student);
+    
+    // Reset courses selection initially to avoid stale data
+    setSelectedCourses([]);
+    
+    // Now try to load courses for the dropdown
+    try {
+      // Fetch courses first
+      const loadedCourses = await fetchCourses();
+      console.log('Loaded courses in dialog:', loadedCourses);
+      
+      // Only after courses are loaded, set the selected courses
+      if (student?.courses && Array.isArray(student.courses)) {
+        // Extract course IDs and ensure they're strings
+        const courseIds = student.courses.map(course => {
+          if (typeof course === 'object' && course.id) {
+            return String(course.id);
+          } else if (typeof course === 'number' || typeof course === 'string') {
+            return String(course);
+          }
+          return null;
+        }).filter(id => id !== null);
+        
+        console.log('Setting selected course IDs:', courseIds);
+        setSelectedCourses(courseIds);
+      } else {
+        console.log('No courses found for student, setting empty selection');
+        setSelectedCourses([]);
+      }
+    } catch (error) {
+      console.error('Failed to load courses for enrollment dialog:', error);
+      // Ensure we still have an empty array rather than undefined
+      setSelectedCourses([]);
+    }
   };
 
   const handleCloseEnrollDialog = () => {
@@ -101,11 +185,11 @@ export default function StudentList() {
     const token = localStorage.getItem('access_token');
     try {
       if (selectedStudent) {
-        await axiosInstance.put(`/api/students/${selectedStudent.id}/`, formData, {
+        await axios.put(`/api/students/${selectedStudent.id}/`, formData, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
       } else {
-        await axiosInstance.post('/api/students/', formData, {
+        await axios.post('/api/students/', formData, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
       }
@@ -125,7 +209,7 @@ export default function StudentList() {
     
     const token = localStorage.getItem('access_token');
     try {
-      await axiosInstance.delete(`/api/students/${id}/`, {
+      await axios.delete(`/api/students/${id}/`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       fetchStudents();
@@ -185,7 +269,7 @@ export default function StudentList() {
       console.log('URL:', `/api/students/${selectedStudent.id}/`);
       console.log('Headers:', { 'Authorization': `Bearer ${token}` });
       
-      const response = await axiosInstance.patch(
+      const response = await axios.patch(
         `/api/students/${selectedStudent.id}/`,
         updateData,
         { headers: { 'Authorization': `Bearer ${token}` } }
@@ -220,7 +304,7 @@ export default function StudentList() {
     }
 
     try {
-      const response = await axiosInstance.get('/api/students/', {
+      const response = await axios.get('/api/students/', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       setStudents(response.data);
@@ -232,10 +316,35 @@ export default function StudentList() {
     }
   };
 
+  // Effect to load students and courses on initial component load
   useEffect(() => {
     fetchStudents();
     fetchCourses();
   }, []);
+  
+  // Dedicated effect to ensure courses are loaded when enrollment dialog opens
+  // and to debug what's happening with the dropdown
+  useEffect(() => {
+    if (openEnrollDialog) {
+      console.log('Enrollment dialog opened - ensuring courses are loaded');
+      console.log('Current courses state:', courses);
+      console.log('Current selectedCourses:', selectedCourses);
+      
+      // Force courses to load again
+      fetchCourses().then(freshCourses => {
+        console.log('Fresh courses loaded in effect:', freshCourses?.length || 0);
+        
+        // Double check that selectedCourses is properly set
+        if (selectedStudent?.courses && selectedCourses.length === 0) {
+          const courseIds = selectedStudent.courses
+            .map(c => typeof c === 'object' ? String(c.id) : String(c))
+            .filter(Boolean);
+          console.log('Setting missing selectedCourses:', courseIds);
+          setSelectedCourses(courseIds);
+        }
+      });
+    }
+  }, [openEnrollDialog, selectedStudent]);
 
   if (loading) return <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}><CircularProgress /></Box>;
 
@@ -305,31 +414,47 @@ export default function StudentList() {
             <TextField
               fullWidth
               label="Name"
+              name="name"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               margin="normal"
               required
+              autoFocus
+              inputProps={{
+                style: { padding: '12px 14px' },
+                onClick: (e) => e.target.focus()
+              }}
               error={!!errors.name}
               helperText={errors.name}
             />
             <TextField
               fullWidth
               label="Email"
+              name="email"
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               margin="normal"
               required
+              inputProps={{
+                style: { padding: '12px 14px' },
+                onClick: (e) => e.target.focus()
+              }}
               error={!!errors.email}
               helperText={errors.email}
             />
             <TextField
               fullWidth
               label="Phone"
+              name="phone"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               margin="normal"
               required
+              inputProps={{
+                style: { padding: '12px 14px' },
+                onClick: (e) => e.target.focus()
+              }}
               error={!!errors.phone}
               helperText={errors.phone}
               placeholder="+1234567890"
@@ -337,11 +462,16 @@ export default function StudentList() {
             <TextField
               fullWidth
               label="Date of Birth"
+              name="date_of_birth"
               type="date"
               value={formData.date_of_birth}
               onChange={(e) => setFormData({ ...formData, date_of_birth: e.target.value })}
               margin="normal"
               required
+              inputProps={{
+                style: { padding: '12px 14px' },
+                onClick: (e) => e.target.focus()
+              }}
               error={!!errors.date_of_birth}
               helperText={errors.date_of_birth}
               InputLabelProps={{ shrink: true }}
@@ -349,12 +479,17 @@ export default function StudentList() {
             <TextField
               fullWidth
               label="Address"
+              name="address"
               value={formData.address}
               onChange={(e) => setFormData({ ...formData, address: e.target.value })}
               margin="normal"
+              required
               multiline
               rows={3}
-              required
+              inputProps={{
+                style: { padding: '12px 14px' },
+                onClick: (e) => e.target.focus()
+              }}
               error={!!errors.address}
               helperText={errors.address}
             />
@@ -369,42 +504,91 @@ export default function StudentList() {
       </Dialog>
 
       {/* Manage Enrollments Dialog */}
-      <Dialog open={openEnrollDialog} onClose={handleCloseEnrollDialog}>
+      <Dialog open={openEnrollDialog} onClose={handleCloseEnrollDialog} maxWidth="md" fullWidth>
         <DialogTitle>Manage Course Enrollments</DialogTitle>
+        {selectedStudent && (
+          <Box sx={{ px: 3, pt: 0, pb: 1 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: 'normal' }}>
+              Student: {selectedStudent.name}
+            </Typography>
+          </Box>
+        )}
         <DialogContent>
-          <FormControl fullWidth sx={{ mt: 2 }}>
-            <InputLabel id="courses-select-label">Courses</InputLabel>
-            <Select
-              labelId="courses-select-label"
-              multiple
-              value={selectedCourses || []}
-              onChange={(e) => {
-                console.log('Selected courses changed:', e.target.value);
-                setSelectedCourses(e.target.value);
+          {loadingCourses ? (
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', my: 4 }}>
+              <CircularProgress size={24} sx={{ mr: 2 }} />
+              <Typography>Loading courses...</Typography>
+            </Box>
+          ) : (
+            <FormControl fullWidth sx={{ mt: 2 }}>
+              <InputLabel htmlFor="courses-select" id="courses-select-label">Courses</InputLabel>
+              <Select
+                labelId="courses-select-label"
+                id="courses-select"
+                label="Courses"
+                multiple
+                value={selectedCourses || []}
+                onChange={(e) => {
+                  console.log('Selected courses changed:', e.target.value);
+                  setSelectedCourses(e.target.value);
+                }}
+                MenuProps={{
+                  PaperProps: {
+                    style: { maxHeight: 300 },
+                  },
+                }}
+                sx={{ minHeight: '56px' }}
+              renderValue={(selected) => {
+                console.log('Rendering selected values:', selected);
+                console.log('Available courses:', courses);
+                
+                if (!selected || selected.length === 0) {
+                  return <em>No courses selected</em>;
+                }
+                
+                return (
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                    {selected.map((value) => {
+                      // Convert values to strings for comparison if needed
+                      const valueStr = String(value);
+                      const course = courses.find(c => String(c.id) === valueStr);
+                      const courseName = course ? course.name : valueStr;
+                      
+                      return (
+                        <Chip
+                          key={valueStr}
+                          label={courseName || `Course ${valueStr}`}
+                          sx={{ m: 0.5 }}
+                          size="small"
+                        />
+                      );
+                    })}
+                  </Box>
+                );
               }}
-              renderValue={(selected) => (
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                  {selected.map((value) => {
-                    const courseName = courses.find(course => course.id === value)?.name || value;
-                    return (
-                      <Chip
-                        key={value}
-                        label={courseName}
-                        sx={{ m: 0.5 }}
-                      />
-                    );
-                  })}
-                </Box>
-              )}
             >
-              {courses.map((course) => (
-                <MenuItem key={course.id} value={course.id}>
-                  <Checkbox checked={selectedCourses?.indexOf(course.id) > -1} />
-                  <ListItemText primary={course.name} secondary={`ID: ${course.id}`} />
-                </MenuItem>
-              ))}
+              {courses && courses.length > 0 ? (
+                courses.map((course) => {
+                  const courseId = String(course.id);
+                  const isSelected = selectedCourses?.some(id => String(id) === courseId);
+                  console.log('Rendering course item:', courseId, course.name, 'Selected:', isSelected);
+                  
+                  return (
+                    <MenuItem key={courseId} value={courseId} dense>
+                      <Checkbox checked={isSelected} />
+                      <ListItemText 
+                        primary={course.name || 'Unnamed Course'} 
+                        secondary={course.primary_faculty_name || 'No faculty assigned'} 
+                      />
+                    </MenuItem>
+                  );
+                })
+              ) : (
+                <MenuItem disabled>No courses available</MenuItem>
+              )}
             </Select>
           </FormControl>
+          )}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseEnrollDialog}>Cancel</Button>
